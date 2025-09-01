@@ -97,7 +97,7 @@ const appsData = [
     id: 5,
     title: "Portfolio Website",
     description: "",
-    appLink: "https://www.elsoghayar.netlify.app",
+    appLink: "http://www.elsoghayar.netlify.app",
     images: [
 
         { url: "/images/my/1.jpg", title: "Screenshot 1" },
