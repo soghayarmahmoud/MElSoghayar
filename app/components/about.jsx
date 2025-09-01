@@ -13,7 +13,9 @@ const TAB_DATA= [
         <ul  className="font-bold text-base text-[#ddd] " key={"sk"}>
             <li key={'VFX'}>HTML</li>
             <li key={"Audio"}>CSS</li>
-            <li key={"Sound"}>JS</li>
+            <li key={"Sound2"}>JS</li>
+            <li key={"Sound1"}>TS</li>
+            <li key={"Sounds"}>Sass</li>
             <li key={"Adobe"}>React.JS</li>
             <li key={"nx"}>Next.JS</li>
             <li key={"ex"}>Express.JS</li>
@@ -41,6 +43,8 @@ const TAB_DATA= [
     content:[
         <ul className="font-bold text-base text-[#ddd] " key={'edu'}>
             <li key={"UI"}>C++</li>
+            <li key={"UI1"}>C#</li>
+            <li key={"UI2"}>Java</li>
             <li key={"3D"} >Github</li>
             <li key={"DevinJatho"}>Python</li>
             <li key={"MotionGraphic"}>Machine Learning</li>
