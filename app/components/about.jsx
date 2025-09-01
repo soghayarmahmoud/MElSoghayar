@@ -90,7 +90,12 @@ function About({ children, initialClass = '', animateClass = '', threshold = 0.5
         <div className="col-span-5 mt-10 lg:mt-0 place-self-center font-bold">
             
             <div className="my-4">
-                <p className="text-[#ddd] text-base ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ut non nam quibusdam praesentium. Numquam placeat, harum vel, doloremque reprehenderit iure quisquam sunt velit expedita ex vero illum ratione cupiditate!</p>
+                <p className="text-[#ddd] text-base ">{`I'm Mahmoud Elsoghayar, a passionate Flutter and Web Developer with a unique fusion of engineering principles and a drive to build exceptional digital experiences. My academic journey in Electrical and Electronic Engineering at HIET in Sohag provides a strong foundation in logic and problem-solving, which I directly apply to every line of code.
+                                                          My programming journey began in 2022, and since then, I have been dedicated to mastering a diverse range of technologies. My expertise spans a wide array of languages, including C++, C#, Java, Python, and the versatile duo of JavaScript and TypeScript.
+                                                          In the world of web development, I build modern, responsive applications using the powerful combination of Next.js, React, Node.js, and MongoDB. For mobile applications, I specialize in Flutter, creating seamless cross-platform experiences and leveraging services like Firebase (Fireauth, Firestore) for robust backend functionality.
+                                                          Beyond core development, I am proficient in essential skills like Git and GitHub for version control, and I use modern styling frameworks such as Sass and Tailwind CSS to craft elegant user interfaces. I am a trilingual communicator, fluent in Arabic, English, and German, enabling me to collaborate effectively in a global environment.
+                                                          I am a creator, a problem-solver, and a lifelong learner committed to shaping the future of technology.
+                                                          \nZukunft gestalten, Code schreiben.\n`}</p>
             </div>
 
 
