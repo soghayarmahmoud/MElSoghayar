@@ -93,7 +93,7 @@ function About({ children, initialClass = '', animateClass = '', threshold = 0.5
                 <p className="text-[#ddd] text-base leading-6">
                     I'm Mahmoud Elsoghayar, a passionate Flutter and Web Developer with a background in Electrical and Electronic Engineering. My expertise lies in building dynamic applications using modern technologies like React, Next.js, and Node.js for the web, and Flutter with Firebase for mobile.
                     My journey since 2022 has given me proficiency in a wide range of languages, including C++, Java, Python, and TypeScript. I am also skilled in key tools like Git, Sass, and Tailwind CSS. Fluent in Arabic, English, and German, I am dedicated to creating impactful digital solutions.
-                   <br className="text-blue-500 font-bold text-xl"> Zukunft gestalten, Code schreiben.</br>
+                   <span className="text-blue-500 font-bold text-xl block"> Zukunft gestalten, Code schreiben.</span>
                 </p>
             </div>
 
