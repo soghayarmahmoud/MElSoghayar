@@ -15,14 +15,20 @@
     "@fortawesome/react-fontawesome": "^3.0.0",
     "@react-email/components": "^0.5.1",
     "@react-email/render": "^1.2.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "lucide-react": "^0.540.0",
+    "motion": "^12.23.12",
     "next": "15.5.0",
+    "ogl": "^1.0.11",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-email": "^4.2.8",
+    "react-icons": "^5.5.0",
     "react-type-animation": "^3.2.0",
     "render": "^0.1.4",
-    "resend": "^6.0.1"
+    "resend": "^6.0.1",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -31,6 +37,7 @@
     "@types/node": "^24.3.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.3.8"
   }
 }

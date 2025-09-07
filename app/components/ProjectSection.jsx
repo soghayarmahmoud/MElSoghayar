@@ -11,7 +11,7 @@ const appsData = [
     id: 1,
     title: "Simple Notes App",
     description: "An amazing app for taking notes.",
-    appLink: "/documents/notes.apk",
+    appLink: "https://drive.google.com/uc?export=download&id=1HGvirMLc9rtPgtBC5GwaDQpo9yWtdPsN",
     images: [
 
         { url: "/images/notes/1.jpg", title: "Notes App First Screenshot" },
@@ -32,7 +32,7 @@ const appsData = [
     id: 2,
     title: "Al-Minshawy - المنشاوي",
     description: "",
-    appLink: "/documents/minsh.apk",
+    appLink: "https://drive.google.com/uc?export=download&id=1p22T9M0vr9SywboGpMs8mNytQl0dg2Se",
     images: [
         { url: "/images/minsh/1.jpg", title: "Al-Minshawy App  Screenshot 1" },
         { url: "/images/minsh/2.jpg", title: "Al-Minshawy App  Screenshot 2" },
@@ -52,7 +52,7 @@ const appsData = [
     id: 3,
     title: "Sahih Al Buckary - صحيح البخاري ",
     description: "",
-    appLink: "/documents/buck.apk",
+    appLink: "https://drive.google.com/uc?export=download&id=1i_inm8g9IyRvfJ-0DjslSmwGvs0N_mvn",
     images: [
 
         { url: "/images/buck/1.jpg", title: "Al-Buckary App  Screenshot 1" },
@@ -117,6 +117,27 @@ const appsData = [
     ],
     down: false,
     tags: ['web', 'all']
+    },
+    {
+    id: 6,
+    title: "O V A L",
+    description: "Media Player with Blur Background",
+    appLink: "https://drive.google.com/uc?export=download&id=1z8FMSnrWbrilivlLg_Ogi2Ho5CtvwhW_",
+    images: [
+
+        { url: "/images/oval/1.jpg", title: "Screenshot 1" },
+        { url: "/images/oval/2.jpg", title: "Screenshot 2" },
+        { url: "/images/oval/4.jpg", title: "Screenshot 4" },
+        { url: "/images/oval/5.jpg", title: "Screenshot 5" },
+        { url: "/images/oval/6.jpg", title: "Screenshot 6" },
+        { url: "/images/oval/7.jpg", title: "Screenshot 7" },
+        { url: "/images/oval/8.jpg", title: "Screenshot 8" },
+        { url: "/images/oval/9.jpg", title: "Screenshot 9" },
+
+    
+    ],
+    down: true,
+    tags: ['mobile', 'all']
     },
 
 ];

@@ -3,10 +3,12 @@ import React from "react";
 import Download from "./download";
 import Image from "next/image";
 import { TypeAnimation } from 'react-type-animation';
+import Galaxy from "./Galaxy";
+//
 
 function HeroSection(){
     return(
-        <section className="px-8 lg:py-42 py-32 bg-[url('/images/b3.jpg')] bg-no-repeat bg-center bg-cover">
+        <section className="px-8 lg:py-42 py-32  bg-[url('/images/b3.jpg')] bg-no-repeat bg-center bg-cover">
 
            
         <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -46,8 +48,8 @@ function HeroSection(){
                 
                 </h1>
                 <div className="flex flex-col sm:flex-col justify-center select-none  md:flex-col lg:flex-row gap-4">
-                    <Download text='Download C.V'  link='/documents/cv.pdf' className='sm:w-full md:w-full h-12 bg-blue-500 hover:bg-blue-400 transition duration-300 text-white lg:w-34 cursor-pointer rounded-xl py-2.5   text-center lg:mx-2 sm:block md:block'/>
-                    <Download text='Show Projects'  link='#projects' className='sm:w-full md:w-full h-12 border-blue-500 border-2 hover:bg-blue-500 transition duration-300 text-white lg:w-34 cursor-pointer rounded-xl py-2.5   text-center lg:mx-2   sm:block  md:block'/>
+                    <Download text='Download C.V'  link='/documents/cv.pdf' className='sm:w-full md:w-full h-12 bg-blue-500 hover:bg-blue-400 transition duration-300 text-white lg:w-40 cursor-pointer rounded-xl py-2.5   text-center lg:mx-2 sm:block md:block'/>
+                    <Download text='Show Projects'  link='#projects' className='sm:w-full md:w-full h-12 border-blue-500 border-2 backdrop-blur-3xl  transition duration-300 text-white lg:w-40 cursor-pointer rounded-xl py-2.5   text-center lg:mx-2   sm:block  md:block'/>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 function Header(){
    return(
-    <header className="w-full h-20 bg-[#00000050] flex flex-row z-40  select-none p-4 justify-between align-middle fixed top-0 left-0">
+    <header className="w-full h-20 bg-transparent backdrop-blur-2xl flex flex-row z-40  select-none p-4 justify-between align-middle fixed top-0 left-0">
         <div className="logo -mt-2">
             <Image src='/images/logo.png' alt="Logo image" width={100} height={50}></Image>
         </div>

@@ -23,7 +23,7 @@ const AppCard = ({ title, description, appLink, images , isDownload }) => {
 
         <div className="flex w-full justify-center align-middle ">
 
-        <Link  href={appLink} download={isDownload} target={isDownload==false ? '_blank' :''} className='w-full bg-blue-500 hover:bg-blue-400 text-white font-bold text-center my-2 p-4 rounded-2xl'>
+        <Link  href={appLink} target={isDownload==false ? '_blank' :''} className='w-full bg-blue-500 hover:bg-blue-400 text-white font-bold text-center my-2 p-4 rounded-2xl'>
             <button className="cursor-pointer">{isDownload ==true ? 'Download' :'Visit Website'}</button>
         </Link>
         </div>
