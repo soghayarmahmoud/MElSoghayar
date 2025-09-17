@@ -12,7 +12,7 @@ function Services() {
             <Carousel
                 baseWidth={350}
                 autoplay={true}
-                autoplayDelay={1500}
+                autoplayDelay={2500}
                 pauseOnHover={true}
                 loop={true}
                 round={false}

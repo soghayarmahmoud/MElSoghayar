@@ -48,7 +48,7 @@ function HeroSection(){
                 
                 </h1>
                 <div className="flex flex-col sm:flex-col justify-center select-none  md:flex-col lg:flex-row gap-4">
-                    <Download text='Download C.V'  link='/documents/cv.pdf' className='sm:w-full md:w-full h-12 bg-blue-500 hover:bg-blue-400 transition duration-300 text-white lg:w-40 cursor-pointer rounded-xl py-2.5   text-center lg:mx-2 sm:block md:block'/>
+                    <Download text='Download C.V'  link='/documents/cv1.pdf' className='sm:w-full md:w-full h-12 bg-blue-500 hover:bg-blue-400 transition duration-300 text-white lg:w-40 cursor-pointer rounded-xl py-2.5   text-center lg:mx-2 sm:block md:block'/>
                     <Download text='Show Projects'  link='#projects' className='sm:w-full md:w-full h-12 border-blue-500 border-2 backdrop-blur-3xl  transition duration-300 text-white lg:w-40 cursor-pointer rounded-xl py-2.5   text-center lg:mx-2   sm:block  md:block'/>
                 </div>
             </div>
