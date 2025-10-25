@@ -1,20 +1,21 @@
-import Header from "./components/header";
-import HeroSection from "./components/hero_section";
-import About from "./components/about";
-import ProjectSection from "./components/ProjectSection";
-import EmailSection from "./components/EmailSection";
-import Footer from "./components/Footer";
-import Services from "./components/Services";
-export default function Home() {
+import ModernHeader from "./components/ModernHeader";
+import ModernHero from "./components/ModernHero";
+import ModernAbout from "./components/ModernAbout";
+import ModernServices from "./components/ModernServices";
+import ModernProjects from "./components/ModernProjects";
+import ModernContact from "./components/ModernContact";
+import ModernFooter from "./components/ModernFooter";
+
+export default function HomePage() {
   return (
     <>
-      <Header></Header>
-      <HeroSection></HeroSection>
-        <About></About>
-        <Services></Services>
-        <ProjectSection></ProjectSection>
-        <EmailSection></EmailSection>
-      <Footer></Footer>
+      <ModernHeader />
+      <ModernHero />
+      <ModernAbout />
+      <ModernServices />
+      <ModernProjects />
+      <ModernContact />
+      <ModernFooter />
     </>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import React,{useTransition, useState} from "react";
-import Image from "next/image";
+import OptimizedImage from "./OptimizedImage";
 import TabButton from "./TabButton";
 
 
@@ -88,7 +88,14 @@ function About({ children, initialClass = '', animateClass = '', threshold = 0.5
     
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         <div className="col-span-7 place-self-center text-center sm:text-left">
-            <Image src='/images/about.jpg' alt="About Me Image" width={300} height={450} className="rounded-2xl select-none"></Image>
+            <OptimizedImage 
+              src='/images/about.jpg' 
+              alt="About Me Image" 
+              width={300} 
+              height={450} 
+              className="rounded-2xl select-none"
+              objectFit="cover"
+            />
         </div> 
     
         <div className="col-span-5 mt-10 lg:mt-0 place-self-center font-bold">

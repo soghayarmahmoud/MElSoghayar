@@ -1,11 +1,17 @@
 import React from "react";
-import Image from "next/image";
+import OptimizedImage from "./OptimizedImage";
 import Link from "next/link";
 function Header(){
    return(
     <header className="w-full h-20 bg-transparent backdrop-blur-2xl flex flex-row z-40  select-none p-4 justify-between align-middle fixed top-0 left-0">
         <div className="logo -mt-2">
-            <Image src='/images/logo.png' alt="Logo image" width={100} height={50}></Image>
+            <OptimizedImage 
+              src='/images/logo.png' 
+              alt="Logo image" 
+              width={100} 
+              height={50}
+              priority={true}
+            />
         </div>
         <div className="menu ">
             <ul className="flex flex-row py-6 lg:font-bold md:font-bold lg:text-xl md:text-xl  sm:text-base sm:font-normal ">

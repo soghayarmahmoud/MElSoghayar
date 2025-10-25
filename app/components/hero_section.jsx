@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
 import Download from "./download";
-import Image from "next/image";
+import OptimizedImage from "./OptimizedImage";
 import { TypeAnimation } from 'react-type-animation';
 import Galaxy from "./Galaxy";
-//
 
 function HeroSection(){
     return(
@@ -14,10 +13,16 @@ function HeroSection(){
         <div className="grid grid-cols-1 lg:grid-cols-12">
 
 
-            <div className="logo w-[250px] h-[250px] rounded-full border-8 border-blue-600 border-dotted col-span-7 place-self-center text-center sm:text-left animate-fade-in-slide-up select-none">
-                <Image src='/images/main.png' alt="Main - profile image for mahmoud elsoghayar" width={250} height={250} className="rounded-full" >
-
-                </Image>
+            <div className="logo w-[250px] h-[250px] rounded-full border-8 border-blue-600 border-dotted col-span-7 place-self-center text-center sm:text-left animate-fade-in-slide-up select-none overflow-hidden">
+                <OptimizedImage 
+                  src='/images/main.png' 
+                  alt="Main - profile image for mahmoud elsoghayar" 
+                  width={250} 
+                  height={250} 
+                  className="rounded-full w-full h-full" 
+                  objectFit="cover"
+                  priority={true}
+                />
             </div>
             <div className="col-span-5 mt-10 lg:mt-0 place-self-center font-bold" >
                 <h1 className="text-white font-bold text-3xl sm:text-2xl lg:text-4xl text-center my-4">
