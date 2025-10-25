@@ -8,11 +8,19 @@ import { Filter } from 'lucide-react';
 const ModernProjects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
+  // ✅ تم إضافة هذا الجزء لتصحيح الخطأ
+  const filters = [
+    { key: 'all', label: 'All' },
+    { key: 'web', label: 'Web Apps' },
+    { key: 'mobile', label: 'Mobile Apps' },
+  ];
+
   const projects = [
     {
       id: 1,
       title: 'E-Commerce App',
-      description: 'A modern e-commerce app built with Next.js and Stripe integration for seamless online shopping experience.',
+      description:
+        'A modern e-commerce app built with Next.js and Stripe integration for seamless online shopping experience.',
       image: '/images/raval.png',
       technologies: ['Flutter', 'Dart', 'Firebase', 'Figma', 'FireAuth'],
       category: 'mobile',
@@ -20,12 +28,13 @@ const ModernProjects = () => {
       githubUrl: 'https://github.com/soghayarmahmoud/raval',
       stars: '',
       views: '1.2k',
-      date: '2025'
+      date: '2025',
     },
     {
       id: 2,
       title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team collaboration features.',
+      description:
+        'A collaborative task management application with real-time updates and team collaboration features.',
       image: '/images/wateera.png',
       technologies: ['Flutter', 'Dart', 'Firebase', 'Figma', 'FireAuth'],
       category: 'mobile',
@@ -33,25 +42,28 @@ const ModernProjects = () => {
       githubUrl: 'https://github.com/soghayarmahmoud/wateera',
       stars: '',
       views: '1.2k',
-      date: '2025'
+      date: '2025',
     },
     {
       id: 3,
-      title: 'AI Chat Assistant',
-      description: 'An intelligent chat assistant built using OpenAI API, providing context-aware responses and code generation.',
-      image: '/images/ai-chat.png',
-      technologies: ['Next.js', 'TypeScript', 'OpenAI', 'Tailwind CSS'],
-      category: 'web',
-      liveUrl: 'https://aichat.codera.dev/',
-      githubUrl: 'https://github.com/soghayarmahmoud/ai-chat',
-      stars: '22',
-      views: '1.8K',
-      date: '2025'
+      title: 'Budget Tracker App',
+      description:
+        'A secure budget tracking app with biometric authentication and real-time transaction monitoring.',
+      image: '/images/mon.png',
+      technologies: ['Flutter', 'Dart', 'Firebase', 'FireAuth', 'Hive'],
+      category: 'mobile',
+      liveUrl:
+        'https://drive.google.com/file/d/1DBSFzryvpzoafOP8v58g1t1h8I02otaF/view',
+      githubUrl: 'https://github.com/soghayarmahmoud/MonTrack',
+      stars: '13',
+      views: '1.1k',
+      date: '2025',
     },
     {
       id: 4,
       title: 'Portfolio Website',
-      description: 'A modern portfolio website with dark mode, internationalization, and smooth animations.',
+      description:
+        'A modern portfolio website with dark mode, internationalization, and smooth animations.',
       image: '/images/alivfx.png',
       technologies: ['Next.js', 'React', 'Tailwind CSS'],
       category: 'web',
@@ -59,40 +71,46 @@ const ModernProjects = () => {
       githubUrl: '#',
       stars: '15',
       views: '1K',
-      date: '2025'
+      date: '2025',
     },
     {
       id: 5,
-      title: 'Codera Platform',
-      description: 'A coding education platform inspired by MDN and W3Schools, offering structured learning paths and AI explanations.',
-      image: '/images/codera.png',
-      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-      category: 'web',
-      liveUrl: 'https://codera.dev/',
-      githubUrl: 'https://github.com/soghayarmahmoud/codera',
-      stars: '30',
-      views: '3.5K',
-      date: '2025'
+      title: 'Simple Notes App',
+      description:
+        'A simple notes application with a clean interface and easy organization.',
+      image: '/images/n1.png',
+      technologies: ['Flutter', 'Dart', 'Firebase', 'FireAuth', 'Hive'],
+      category: 'mobile',
+      liveUrl:
+        'https://drive.google.com/drive/folders/1J2tYf2mV6lDXXdFqjru0K7rPJEVF8dxv?hl=ar',
+      githubUrl: '',
+      stars: '12',
+      views: '2.1K',
+      date: '2025',
     },
     {
       id: 6,
-      title: 'Smart Home Controller',
-      description: 'A Flutter app to control smart home devices with Firebase integration and real-time device status updates.',
-      image: '/images/smarthome.png',
-      technologies: ['Flutter', 'Dart', 'Firebase', 'IoT'],
+      title: 'Sahih Al-Bukhari App',
+      description:
+        'An Islamic app providing access to the complete collection of Sahih Al-Bukhari Hadiths with search functionality.',
+      image: '/images/b.png',
+      technologies: [
+        'Flutter',
+        'Dart',
+        'Firebase',
+        'FireAuth',
+        'Hive',
+        'Search API',
+        'SQFlite',
+      ],
       category: 'mobile',
-      liveUrl: '#',
-      githubUrl: 'https://github.com/soghayarmahmoud/smarthome',
-      stars: '',
-      views: '980',
-      date: '2025'
-    }
-  ];
-
-  const filters = [
-    { key: 'all', label: 'All Projects' },
-    { key: 'web', label: 'Web Apps' },
-    { key: 'mobile', label: 'Mobile Apps' }
+      liveUrl:
+        'https://drive.google.com/drive/folders/1KUXVw-iJwnZ0OqPs2nEaOTe4KaUcQwAy?hl=ar',
+      githubUrl: 'https://github.com/soghayarmahmoud/buck',
+      stars: '28',
+      views: '1.5k',
+      date: '2025',
+    },
   ];
 
   const filteredProjects =
@@ -106,9 +124,9 @@ const ModernProjects = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   return (
@@ -156,7 +174,11 @@ const ModernProjects = () => {
           <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <AnimatePresence mode="sync">
               {filteredProjects.map((project, index) => (
-                <ModernProjectCard key={project.id} project={project} index={index} />
+                <ModernProjectCard
+                  key={project.id}
+                  project={project}
+                  index={index}
+                />
               ))}
             </AnimatePresence>
           </motion.div>
