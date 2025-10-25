@@ -21,39 +21,58 @@ const ModernContact = () => {
     });
   };
 
+  // ✅ الكود الجديد هنا
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+    setSubmitStatus(null);
+
+    try {
+      const res = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.email,
+          subject: `${formData.subject} - from ${formData.name}`,
+          message: formData.message
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+        console.error('Resend API Error:', data.error);
+      }
+    } catch (error) {
+      console.error('Request Error:', error);
+      setSubmitStatus('error');
+    } finally {
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
-    }, 2000);
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
   };
 
   const contactInfo = [
     {
       icon: <Mail size={24} />,
       title: 'Email',
-      value: 'mahmoud@example.com',
+      value: 'alsighiar@gmail.com',
       href: 'mailto:alsighiar@gmail.com'
     },
     {
       icon: <Phone size={24} />,
       title: 'Phone',
-      value: '+20 123 456 7890',
+      value: '+20 101 959 3092',
       href: 'tel:+201019593092'
     },
     {
       icon: <MapPin size={24} />,
       title: 'Location',
-      value: 'Cairo, Egypt',
+      value: 'Luxor, Egypt',
       href: '#'
     }
   ];
@@ -62,22 +81,13 @@ const ModernContact = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
+      transition: { delayChildren: 0.3, staggerChildren: 0.2 }
     }
   };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5
-      }
-    }
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } }
   };
 
   return (
@@ -140,28 +150,6 @@ const ModernContact = () => {
                   </motion.a>
                 ))}
               </div>
-
-              {/* Social Links */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                className="pt-8"
-              >
-                <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-4">
-                  Follow Me
-                </h4>
-                <div className="flex space-x-4">
-                  {['GitHub', 'LinkedIn', 'Twitter', 'Instagram'].map((social) => (
-                    <motion.a
-                      key={social}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white font-medium hover:shadow-lg transition-all duration-300"
-                    >
-                      {social[0]}
-                    </motion.a>
-                  ))}
-                </div>
-              </motion.div>
             </motion.div>
 
             {/* Contact Form */}
@@ -240,7 +228,7 @@ const ModernContact = () => {
                     <>
                       <motion.div
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                         className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
                       />
                       <span>Sending...</span>
@@ -270,7 +258,9 @@ const ModernContact = () => {
                       <AlertCircle size={20} />
                     )}
                     <span>
-                      {submitStatus === 'success' ? t('success') : t('error')}
+                      {submitStatus === 'success'
+                        ? 'Message sent successfully!'
+                        : 'Something went wrong. Please try again.'}
                     </span>
                   </motion.div>
                 )}

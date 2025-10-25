@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, ArrowUp } from 'lucide-react';
+import { Heart, ArrowUp, Github, Linkedin, Youtube, Facebook } from 'lucide-react';
 
 const ModernFooter = () => {
 
@@ -10,10 +10,10 @@ const ModernFooter = () => {
   };
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/soghayarmahmoud', icon: 'GH' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/mahmoud-el-soghayar-1847a5234/', icon: 'LI' },
-    { name: 'Youtube', url: 'https://youtube.com/@procode4u', icon: 'YT' },
-    { name: 'Facebook', url: 'https://www.facebook.com/mahmoud.elsieghaiar', icon: 'FB' }
+    { name: 'GitHub', url: 'https://github.com/soghayarmahmoud', icon: <Github size={20} /> },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/mahmoud-el-soghayar-1847a5234/', icon: <Linkedin size={20} /> },
+    { name: 'Youtube', url: 'https://youtube.com/@procode4u', icon: <Youtube size={20} /> },
+    { name: 'Facebook', url: 'https://www.facebook.com/mahmoud.elsieghaiar', icon: <Facebook size={20} /> }
   ];
 
   const quickLinks = [
@@ -58,13 +58,15 @@ const ModernFooter = () => {
                 <motion.a
                   key={social.name}
                   href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="w-12 h-12 bg-slate-800 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 rounded-lg flex items-center justify-center transition-all duration-300 group"
                 >
-                  <span className="font-bold text-sm group-hover:text-white">
+                  <span className="text-white group-hover:text-white transition-colors duration-300">
                     {social.icon}
                   </span>
                 </motion.a>

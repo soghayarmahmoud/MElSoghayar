@@ -12,89 +12,88 @@ const ModernProjects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A modern e-commerce platform built with Next.js and Stripe integration for seamless online shopping experience.',
-      image: 'images/appstore.png',
+      title: 'E-Commerce App',
+      description: 'A modern e-commerce app built with Next.js and Stripe integration for seamless online shopping experience.',
+      image: '/images/raval.png',
       technologies: ['Flutter', 'Dart', 'Firebase', 'Figma', 'FireAuth'],
-      category: 'web',
+      category: 'mobile',
       liveUrl: '#',
-      githubUrl: '#',
-      stars: '24',
+      githubUrl: 'https://github.com/soghayarmahmoud/raval',
+      stars: '',
       views: '1.2k',
-      date: '2024'
+      date: '2025'
     },
     {
       id: 2,
       title: 'Task Management App',
       description: 'A collaborative task management application with real-time updates and team collaboration features.',
-      image: '/api/placeholder/400/300',
-      technologies: ['React', 'Node.js', 'Socket.io', 'PostgreSQL'],
-      category: 'web',
+      image: '/images/wateera.png',
+      technologies: ['Flutter', 'Dart', 'Firebase', 'Figma', 'FireAuth'],
+      category: 'mobile',
       liveUrl: '#',
-      githubUrl: '#',
-      stars: '18',
-      views: '890',
-      date: '2024'
+      githubUrl: 'https://github.com/soghayarmahmoud/wateera',
+      stars: '',
+      views: '1.2k',
+      date: '2025'
     },
     {
       id: 3,
-      title: 'Mobile Banking App',
-      description: 'A secure mobile banking application with biometric authentication and real-time transaction monitoring.',
-      image: '/api/placeholder/400/300',
-      technologies: ['React Native', 'Firebase', 'Redux', 'TypeScript'],
+      title: 'Budget Tracker App',
+      description: 'A secure budget tracking app with biometric authentication and real-time transaction monitoring.',
+      image: '/images/mon.png',
+      technologies: ['Flutter', 'Dart', 'Firebase', 'FireAuth', 'Hive'],
       category: 'mobile',
-      liveUrl: '#',
-      githubUrl: '#',
-      stars: '32',
-      views: '2.1k',
-      date: '2023'
+      liveUrl: 'https://drive.google.com/file/d/1DBSFzryvpzoafOP8v58g1t1h8I02otaF/view',
+      githubUrl: 'https://github.com/soghayarmahmoud/MonTrack',
+      stars: '13',
+      views: '1.1k',
+      date: '2025'
     },
     {
       id: 4,
       title: 'Portfolio Website',
       description: 'A modern portfolio website with dark mode, internationalization, and smooth animations.',
-      image: '/api/placeholder/400/300',
-      technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'next-intl'],
+      image: '/images/alivfx.png',
+      technologies: ['Next.js', 'React', 'Tailwind CSS'],
       category: 'web',
-      liveUrl: '#',
+      liveUrl: 'https://alivfx.vercel.app/',
       githubUrl: '#',
       stars: '15',
-      views: '650',
-      date: '2024'
+      views: '1K',
+      date: '2025'
     },
     {
       id: 5,
-      title: 'Weather App',
-      description: 'A beautiful weather application with location-based forecasts and interactive maps.',
-      image: '/api/placeholder/400/300',
-      technologies: ['Flutter', 'Dart', 'OpenWeather API', 'Google Maps'],
+      title: 'Simple Notes App',
+      description: 'A simple notes application with a clean interface and easy organization.',
+      image: '/images/n1.png',
+      technologies: ['Flutter', 'Dart', 'Firebase', 'FireAuth', 'Hive'],
       category: 'mobile',
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://drive.google.com/drive/folders/1J2tYf2mV6lDXXdFqjru0K7rPJEVF8dxv?hl=ar',
+      githubUrl: '',
       stars: '12',
-      views: '420',
-      date: '2023'
+      views: '2.1K',
+      date: '2025'
     },
     {
       id: 6,
-      title: 'Design System',
-      description: 'A comprehensive design system with reusable components and design tokens for consistent UI.',
-      image: '/api/placeholder/400/300',
-      technologies: ['Figma', 'Storybook', 'React', 'CSS Variables'],
-      category: 'design',
-      liveUrl: '#',
-      githubUrl: '#',
+      title: 'Sahih Al-Bukhari App',
+      description: 'An Islamic app providing access to the complete collection of Sahih Al-Bukhari Hadiths with search functionality.',
+      image: '/images/b.png',
+      technologies: ['Flutter', 'Dart', 'Firebase', 'FireAuth', 'Hive', 'Search API', 'SQFlite'],
+      category: 'mobile',
+      liveUrl: 'https://drive.google.com/drive/folders/1KUXVw-iJwnZ0OqPs2nEaOTe4KaUcQwAy?hl=ar',
+      githubUrl: 'https://github.com/soghayarmahmoud/buck',
       stars: '28',
       views: '1.5k',
-      date: '2024'
+      date: '2025'
     }
   ];
 
   const filters = [
     { key: 'all', label: 'All Projects' },
     { key: 'web', label: 'Web Apps' },
-    { key: 'mobile', label: 'Mobile Apps' },
-    { key: 'design', label: 'UI/UX Design' }
+    { key: 'mobile', label: 'Mobile Apps' }
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -186,13 +185,14 @@ const ModernProjects = () => {
             variants={itemVariants}
             className="text-center mt-16"
           >
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               View All Projects
-            </motion.button>
+            </motion.button> */}
+
           </motion.div>
         </motion.div>
       </div>

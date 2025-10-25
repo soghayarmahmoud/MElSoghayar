@@ -1,3 +1,5 @@
+'use client';
+
 import ModernHeader from "./components/ModernHeader";
 import ModernHero from "./components/ModernHero";
 import ModernAbout from "./components/ModernAbout";

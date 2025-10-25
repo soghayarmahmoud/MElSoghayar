@@ -93,7 +93,9 @@ const ModernHero = () => {
                 2000,
                 'Node.js Developer',
                 2000,
-                'UI/UX Designer',
+                'Flutter Developer',
+                2000,
+                'Online Instructor',
                 2000,
               ]}
               wrapper="span"
@@ -102,7 +104,6 @@ const ModernHero = () => {
             />
           </motion.div>
 
-          {/* Description */}
           <motion.p
             variants={itemVariants}
             className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed"
@@ -110,31 +111,36 @@ const ModernHero = () => {
             Passionate about building modern web applications with cutting-edge technologies. Let's bring your ideas to life!
           </motion.p>
 
-          {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <motion.button
+            {/* Download CV Button */}
+            <motion.a
+              href="/documents/Mahmoud_El-Soghayar_Flutter_Developer.pdf"
+              download
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
             >
               <Download size={20} />
               <span>Download CV</span>
-            </motion.button>
+            </motion.a>
 
-            <motion.button
+            {/* Hire Me Button (WhatsApp) */}
+            <motion.a
+              href="https://wa.me/201019593092"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="group border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 flex items-center space-x-2"
+              className="group border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:border-green-500 dark:hover:border-green-400 hover:text-green-600 dark:hover:text-green-400 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 flex items-center space-x-2"
             >
               <Mail size={20} />
               <span>Hire Me</span>
-            </motion.button>
+            </motion.a>
           </motion.div>
 
-          {/* Scroll Indicator */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col items-center"
@@ -150,7 +156,6 @@ const ModernHero = () => {
         </motion.div>
       </div>
 
-      {/* Decorative Elements */}
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}

@@ -10,13 +10,15 @@ const ModernAbout = () => {
     { name: 'React/Next.js', level: 95, icon: <Code size={20} /> },
     { name: 'Node.js', level: 90, icon: <Database size={20} /> },
     { name: 'UI/UX Design', level: 85, icon: <Palette size={20} /> },
-    { name: 'Full Stack', level: 92, icon: <Globe size={20} /> }
+    { name: 'Full Stack', level: 80, icon: <Globe size={20} /> },
+    { name: 'Flutter', level: 92, icon: <Globe size={20} /> },
+
   ];
 
   const stats = [
     { number: '3+', label: 'Years Experience', icon: <Award size={24} /> },
-    { number: '50+', label: 'Projects Completed', icon: <Code size={24} /> },
-    { number: '30+', label: 'Happy Clients', icon: <Users size={24} /> },
+    { number: '20+', label: 'Projects Completed', icon: <Code size={24} /> },
+    { number: '10+', label: 'Happy Clients', icon: <Users size={24} /> },
     { number: '∞', label: 'Coffee Cups', icon: <Coffee size={24} /> }
   ];
 
