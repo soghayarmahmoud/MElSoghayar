@@ -14,13 +14,23 @@ const ModernProjectCard = ({ project, index }) => {
         duration: 0.6,
         delay: index * 0.1
       }
+    },
+    exit: {
+      opacity: 0,
+      y: 50,
+      transition: { duration: 0.4 }
     }
   };
 
   return (
     <motion.div
+      key={project.id}
       variants={cardVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
       whileHover={{ y: -10, scale: 1.02 }}
+      layout
       className="group relative bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
     >
       {/* Project Image */}
@@ -39,10 +49,10 @@ const ModernProjectCard = ({ project, index }) => {
             objectFit="cover"
           />
         </motion.div>
-        
+
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        
+
         {/* Action Buttons */}
         <div className="absolute inset-0 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
           <motion.button
@@ -78,7 +88,6 @@ const ModernProjectCard = ({ project, index }) => {
 
       {/* Content */}
       <div className="p-6">
-        {/* Title & Description */}
         <div className="mb-4">
           <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
             {project.title}
@@ -88,7 +97,6 @@ const ModernProjectCard = ({ project, index }) => {
           </p>
         </div>
 
-        {/* Tech Stack */}
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies?.map((tech, techIndex) => (
             <motion.span
@@ -103,7 +111,6 @@ const ModernProjectCard = ({ project, index }) => {
           ))}
         </div>
 
-        {/* Stats */}
         <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400 mb-4">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
@@ -118,7 +125,6 @@ const ModernProjectCard = ({ project, index }) => {
           <span className="text-xs">{project.date}</span>
         </div>
 
-        {/* Action Links */}
         <div className="flex space-x-3">
           <motion.a
             whileHover={{ scale: 1.05 }}
@@ -139,10 +145,9 @@ const ModernProjectCard = ({ project, index }) => {
         </div>
       </div>
 
-      {/* Decorative Elements */}
       <motion.div
         animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-10"
       />
     </motion.div>

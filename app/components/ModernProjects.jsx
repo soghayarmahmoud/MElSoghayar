@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import ModernProjectCard from './ModernProjectCard';
 import { Filter } from 'lucide-react';
@@ -8,7 +8,6 @@ import { Filter } from 'lucide-react';
 const ModernProjects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
-  // Sample projects data - replace with your actual projects
   const projects = [
     {
       id: 1,
@@ -38,15 +37,15 @@ const ModernProjects = () => {
     },
     {
       id: 3,
-      title: 'Budget Tracker App',
-      description: 'A secure budget tracking app with biometric authentication and real-time transaction monitoring.',
-      image: '/images/mon.png',
-      technologies: ['Flutter', 'Dart', 'Firebase', 'FireAuth', 'Hive'],
-      category: 'mobile',
-      liveUrl: 'https://drive.google.com/file/d/1DBSFzryvpzoafOP8v58g1t1h8I02otaF/view',
-      githubUrl: 'https://github.com/soghayarmahmoud/MonTrack',
-      stars: '13',
-      views: '1.1k',
+      title: 'AI Chat Assistant',
+      description: 'An intelligent chat assistant built using OpenAI API, providing context-aware responses and code generation.',
+      image: '/images/ai-chat.png',
+      technologies: ['Next.js', 'TypeScript', 'OpenAI', 'Tailwind CSS'],
+      category: 'web',
+      liveUrl: 'https://aichat.codera.dev/',
+      githubUrl: 'https://github.com/soghayarmahmoud/ai-chat',
+      stars: '22',
+      views: '1.8K',
       date: '2025'
     },
     {
@@ -64,28 +63,28 @@ const ModernProjects = () => {
     },
     {
       id: 5,
-      title: 'Simple Notes App',
-      description: 'A simple notes application with a clean interface and easy organization.',
-      image: '/images/n1.png',
-      technologies: ['Flutter', 'Dart', 'Firebase', 'FireAuth', 'Hive'],
-      category: 'mobile',
-      liveUrl: 'https://drive.google.com/drive/folders/1J2tYf2mV6lDXXdFqjru0K7rPJEVF8dxv?hl=ar',
-      githubUrl: '',
-      stars: '12',
-      views: '2.1K',
+      title: 'Codera Platform',
+      description: 'A coding education platform inspired by MDN and W3Schools, offering structured learning paths and AI explanations.',
+      image: '/images/codera.png',
+      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+      category: 'web',
+      liveUrl: 'https://codera.dev/',
+      githubUrl: 'https://github.com/soghayarmahmoud/codera',
+      stars: '30',
+      views: '3.5K',
       date: '2025'
     },
     {
       id: 6,
-      title: 'Sahih Al-Bukhari App',
-      description: 'An Islamic app providing access to the complete collection of Sahih Al-Bukhari Hadiths with search functionality.',
-      image: '/images/b.png',
-      technologies: ['Flutter', 'Dart', 'Firebase', 'FireAuth', 'Hive', 'Search API', 'SQFlite'],
+      title: 'Smart Home Controller',
+      description: 'A Flutter app to control smart home devices with Firebase integration and real-time device status updates.',
+      image: '/images/smarthome.png',
+      technologies: ['Flutter', 'Dart', 'Firebase', 'IoT'],
       category: 'mobile',
-      liveUrl: 'https://drive.google.com/drive/folders/1KUXVw-iJwnZ0OqPs2nEaOTe4KaUcQwAy?hl=ar',
-      githubUrl: 'https://github.com/soghayarmahmoud/buck',
-      stars: '28',
-      views: '1.5k',
+      liveUrl: '#',
+      githubUrl: 'https://github.com/soghayarmahmoud/smarthome',
+      stars: '',
+      views: '980',
       date: '2025'
     }
   ];
@@ -96,9 +95,10 @@ const ModernProjects = () => {
     { key: 'mobile', label: 'Mobile Apps' }
   ];
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+  const filteredProjects =
+    activeFilter === 'all'
+      ? projects
+      : projects.filter((p) => p.category === activeFilter);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -107,17 +107,6 @@ const ModernProjects = () => {
       transition: {
         delayChildren: 0.3,
         staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5
       }
     }
   };
@@ -132,8 +121,7 @@ const ModernProjects = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="max-w-7xl mx-auto"
         >
-          {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
+          <motion.div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Projects
@@ -143,7 +131,6 @@ const ModernProjects = () => {
               Some of my recent work
             </p>
 
-            {/* Filter Buttons */}
             <div className="flex flex-wrap justify-center gap-4">
               {filters.map((filter) => (
                 <motion.button
@@ -166,33 +153,12 @@ const ModernProjects = () => {
             </div>
           </motion.div>
 
-          {/* Projects Grid */}
-          <motion.div
-            layout
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {filteredProjects.map((project, index) => (
-              <ModernProjectCard
-                key={project.id}
-                project={project}
-                index={index}
-              />
-            ))}
-          </motion.div>
-
-          {/* Load More Button */}
-          <motion.div
-            variants={itemVariants}
-            className="text-center mt-16"
-          >
-            {/* <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              View All Projects
-            </motion.button> */}
-
+          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <AnimatePresence mode="sync">
+              {filteredProjects.map((project, index) => (
+                <ModernProjectCard key={project.id} project={project} index={index} />
+              ))}
+            </AnimatePresence>
           </motion.div>
         </motion.div>
       </div>
