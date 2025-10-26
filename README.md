@@ -1,6 +1,6 @@
 <!-- Animated Header -->
 <h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&width=435&lines=Hey+There!+👋;I'm+Mahmoud+El-Soghayar;Flutter+%26+MERN+Developer;Welcome+to+my+Profile!+🚀" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=00C7FF&center=true&vCenter=true&width=435&lines=Hey+There!+👋;I'm+Mahmoud+El-Soghayar;Flutter+%26+MERN+Developer;Welcome+to+my+Profile!+🚀" alt="Typing SVG" />
 </h1>
 
 ---
@@ -40,7 +40,7 @@ An AI-powered daily management app that helps users organize their tasks, schedu
 
 ---
 
-###  What I’m Working On
+### 🌈 What I’m Working On
 
 - 🔥 Building smarter AI-integrated apps  
 - 🧠 Experimenting with design systems & motion UI  
@@ -52,21 +52,9 @@ An AI-powered daily management app that helps users organize their tasks, schedu
 
 <p align="center">
   <a href="https://alivfx.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" /></a>
-  <a href="https://github.com/mahmoudelsoghayar" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" /></a>
+  <a href="https://github.com/mahmoudelsoghayar" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
   <a href="https://www.linkedin.com/in/mahmoudelsoghayar" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
   <a href="mailto:mahmoudelsoghayar@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-</p>
-
----
-
-### 🏆 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mahmoudelsoghayar&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mahmoudelsoghayar&theme=tokyonight" alt="GitHub Streak" />
 </p>
 
 ---
