@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- Animated Header -->
+<h1 align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&width=435&lines=Hey+There!+👋;I'm+Mahmoud+El-Soghayar;Flutter+%26+MERN+Developer;Welcome+to+my+Profile!+🚀" alt="Typing SVG" />
+</h1>
 
-## Getting Started
+---
 
-First, run the development server:
+### 🧑‍💻 About Me
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Hi there! I'm **Mahmoud El-Soghayar**, a passionate **Flutter** and **MERN Stack Developer** who loves creating beautiful, fast, and intelligent digital experiences.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 💡 I enjoy building mobile and web apps that combine design, functionality, and performance.  
+- ⚙️ Currently exploring **AI integration** in modern apps.  
+- 🚀 Always learning and experimenting with new technologies.  
+- 💬 Ask me about Flutter, React, Node.js, Express, MongoDB, or integrating AI into apps.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🚀 Featured Projects
 
-## Learn More
+#### 🌀 [Alivfx](https://alivfx.vercel.app)
+A personal portfolio website showcasing creative motion design and animations.  
+🛠 Built with **Next.js**, **Framer Motion**, and **TailwindCSS**.
 
-To learn more about Next.js, take a look at the following resources:
+#### 💰 MonTrack
+A budget-tracking mobile app to help users manage their finances smartly.  
+📱 Built with **Flutter** and **Firebase** for seamless data sync and performance.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### 🤖 Wateera
+An AI-powered daily management app that helps users organize their tasks, schedules, and productivity.  
+🧠 Powered by **Flutter**, **OpenAI APIs**, and **Firebase** backend.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 🧰 Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=flutter,dart,react,nodejs,express,mongodb,js,ts,tailwind,firebase,git,github,vscode&perline=6" />
+</p>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+###  What I’m Working On
+
+- 🔥 Building smarter AI-integrated apps  
+- 🧠 Experimenting with design systems & motion UI  
+- 💼 Enhancing my developer portfolio  
+
+---
+
+### 📫 Let's Connect
+
+<p align="center">
+  <a href="https://alivfx.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+  <a href="https://github.com/mahmoudelsoghayar" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" /></a>
+  <a href="https://www.linkedin.com/in/mahmoudelsoghayar" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="mailto:mahmoudelsoghayar@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+</p>
+
+---
+
+### 🏆 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=mahmoudelsoghayar&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mahmoudelsoghayar&theme=tokyonight" alt="GitHub Streak" />
+</p>
+
+---
+
+### ⚡ Fun Fact
+
+> “Code is like humor. When you have to explain it, it’s bad.” 😄
+
+---
+
+⭐ **Thanks for visiting my profile!**  
+If you like what you see, don’t forget to ⭐ some repos — it motivates me to create even more awesome projects!
