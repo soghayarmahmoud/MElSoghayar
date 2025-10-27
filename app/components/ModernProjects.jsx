@@ -130,13 +130,13 @@ const ModernProjects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-slate-900">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-20 bg-white dark:bg-slate-900 overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="max-w-7xl mx-auto"
         >
           <motion.div className="text-center mb-16">
@@ -156,7 +156,7 @@ const ModernProjects = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setActiveFilter(filter.key)}
-                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${
                     activeFilter === filter.key
                       ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg'
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
@@ -171,7 +171,7 @@ const ModernProjects = () => {
             </div>
           </motion.div>
 
-          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <AnimatePresence mode="sync">
               {filteredProjects.map((project, index) => (
                 <ModernProjectCard
