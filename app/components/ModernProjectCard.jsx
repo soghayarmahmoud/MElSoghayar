@@ -80,9 +80,20 @@ const ModernProjectCard = ({ project, index }) => {
 
         {/* Status Badge */}
         <div className="absolute top-4 right-4">
-          <span className="bg-green-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-            Live
-          </span>
+          {project.status === 'in-progress' ? (
+            <span className="bg-yellow-500 text-white text-xs px-3 py-1 rounded-full font-medium flex items-center space-x-1">
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+              <span>In Progress</span>
+            </span>
+          ) : project.status === 'pending' ? (
+            <span className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+              Pending
+            </span>
+          ) : (
+            <span className="bg-green-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+              Live
+            </span>
+          )}
         </div>
       </div>
 
@@ -130,14 +141,17 @@ const ModernProjectCard = ({ project, index }) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href={project.liveUrl}
+            download={project.downloadApk ? `${project.title}.apk` : undefined}
             className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center py-2 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300"
           >
-            Live Demo
+            {project.downloadApk ? 'Download APK' : 'Live Demo'}
           </motion.a>
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-1 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 text-center py-2 px-4 rounded-lg font-medium hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
           >
             Source Code
