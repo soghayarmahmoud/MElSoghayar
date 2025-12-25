@@ -10,7 +10,7 @@ const ModernServices = () => {
       icon: <Code size={40} />,
       title: 'Web Development',
       description: 'Custom web applications built with modern technologies',
-      gradient: 'from-blue-500 to-cyan-500',
+      gradient: 'from-cyan-500 to-blue-500',
       features: ['React/Next.js', 'Node.js', 'Database Design', 'API Development']
     },
     {
@@ -24,7 +24,7 @@ const ModernServices = () => {
       icon: <Palette size={40} />,
       title: 'UI/UX Design',
       description: 'Beautiful and intuitive user interfaces and experiences',
-      gradient: 'from-green-500 to-teal-500',
+      gradient: 'from-teal-500 to-emerald-500',
       features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems']
     },
     {
@@ -71,7 +71,7 @@ const ModernServices = () => {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Services
               </span>
             </h2>
@@ -91,7 +91,7 @@ const ModernServices = () => {
               >
                 {/* Background Gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-                
+
                 {/* Icon */}
                 <motion.div
                   whileHover={{ rotate: 360 }}
@@ -105,7 +105,7 @@ const ModernServices = () => {
                 <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-4">
                   {service.title}
                 </h3>
-                
+
                 <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
                   {service.description}
                 </p>
@@ -129,7 +129,7 @@ const ModernServices = () => {
                 {/* CTA */}
                 <motion.div
                   whileHover={{ x: 5 }}
-                  className="flex items-center text-blue-600 dark:text-blue-400 font-medium cursor-pointer group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300"
+                  className="flex items-center text-cyan-600 dark:text-cyan-400 font-medium cursor-pointer group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"
                 >
                   <span>Learn More</span>
                   <ArrowRight size={16} className="ml-2" />

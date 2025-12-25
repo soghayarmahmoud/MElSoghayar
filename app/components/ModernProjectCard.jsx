@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Eye, Star } from 'lucide-react';
+import { ExternalLink, Github, Download, ArrowRight } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
+import Link from 'next/link';
 
 const ModernProjectCard = ({ project, index }) => {
   const cardVariants = {
@@ -51,32 +52,25 @@ const ModernProjectCard = ({ project, index }) => {
         </motion.div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-        {/* Action Buttons */}
-        <div className="absolute inset-0 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-colors duration-200"
+        {/* View Details Button - Centered on Hover */}
+        <Link href={`/projects/${project.id}`}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileHover={{ scale: 1.05 }}
+            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
           >
-            <Eye size={20} />
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-colors duration-200"
-          >
-            <Github size={20} />
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-colors duration-200"
-          >
-            <ExternalLink size={20} />
-          </motion.button>
-        </div>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-full font-semibold flex items-center space-x-2 shadow-xl"
+            >
+              <span>View Details</span>
+              <ArrowRight size={20} />
+            </motion.button>
+          </motion.div>
+        </Link>
 
         {/* Status Badge */}
         <div className="absolute top-4 right-4">
@@ -100,40 +94,31 @@ const ModernProjectCard = ({ project, index }) => {
       {/* Content */}
       <div className="p-6">
         <div className="mb-4">
-          <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+          <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:to-blue-600 group-hover:bg-clip-text transition-all duration-300">
             {project.title}
           </h3>
-          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed line-clamp-2">
             {project.description}
           </p>
         </div>
 
         <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies?.map((tech, techIndex) => (
+          {project.technologies?.slice(0, 3).map((tech, techIndex) => (
             <motion.span
               key={tech}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: techIndex * 0.1 }}
-              className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1 rounded-full font-medium hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200"
+              className="bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 text-cyan-700 dark:text-cyan-300 text-xs px-3 py-1 rounded-full font-medium border border-cyan-200 dark:border-cyan-800"
             >
               {tech}
             </motion.span>
           ))}
-        </div>
-
-        <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400 mb-4">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <Star size={14} />
-              <span>{project.stars || '0'}</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Eye size={14} />
-              <span>{project.views || '0'}</span>
-            </div>
-          </div>
-          <span className="text-xs">{project.date}</span>
+          {project.technologies?.length > 3 && (
+            <span className="text-xs text-slate-500 dark:text-slate-400 px-3 py-1">
+              +{project.technologies.length - 3} more
+            </span>
+          )}
         </div>
 
         <div className="flex space-x-3">
@@ -142,27 +127,43 @@ const ModernProjectCard = ({ project, index }) => {
             whileTap={{ scale: 0.95 }}
             href={project.liveUrl}
             download={project.downloadApk ? `${project.title}.apk` : undefined}
-            className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center py-2 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300"
+            target={!project.downloadApk ? "_blank" : undefined}
+            rel={!project.downloadApk ? "noopener noreferrer" : undefined}
+            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-center py-2 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
           >
-            {project.downloadApk ? 'Download APK' : 'Live Demo'}
+            {project.downloadApk ? (
+              <>
+                <Download size={16} />
+                <span>Download</span>
+              </>
+            ) : (
+              <>
+                <ExternalLink size={16} />
+                <span>Live Demo</span>
+              </>
+            )}
           </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 text-center py-2 px-4 rounded-lg font-medium hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
-          >
-            Source Code
-          </motion.a>
+
+          {project.githubUrl && project.githubUrl !== '#' && project.githubUrl !== '' && (
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 text-center py-2 px-4 rounded-lg font-medium hover:border-cyan-500 dark:hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-300 flex items-center justify-center space-x-2"
+            >
+              <Github size={16} />
+              <span>GitHub</span>
+            </motion.a>
+          )}
         </div>
       </div>
 
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-10"
+        className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full opacity-10"
       />
     </motion.div>
   );

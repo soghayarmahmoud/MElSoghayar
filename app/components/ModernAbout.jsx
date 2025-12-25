@@ -57,7 +57,7 @@ const ModernAbout = () => {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
                 About Me
               </span>
             </h2>
@@ -99,7 +99,7 @@ const ModernAbout = () => {
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           transition={{ duration: 1, delay: index * 0.1 }}
-                          className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
+                          className="bg-gradient-to-r from-cyan-500 via-blue-500 to-teal-500 h-2 rounded-full shadow-lg"
                         />
                       </div>
                     </motion.div>
@@ -114,35 +114,35 @@ const ModernAbout = () => {
               <div className="relative">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-2xl shadow-2xl flex items-center justify-center"
+                  className="w-80 h-80 mx-auto bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 rounded-2xl shadow-2xl flex items-center justify-center"
                 >
-                
+
                   <div className="w-72 h-72 bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden">
-                    <OptimizedImage 
-                      src="/images/about.jpg" 
-                      alt="Profile" 
-                      width={288} 
-                      height={288} 
+                    <OptimizedImage
+                      src="/images/about.jpg"
+                      alt="Profile"
+                      width={288}
+                      height={288}
                       className="w-full h-full rounded-xl"
                       objectFit="cover"
                       priority={true}
                     />
                   </div>
                 </motion.div>
-                
+
                 {/* Floating Elements */}
                 <motion.div
                   animate={{ y: [-10, 10, -10], rotate: [0, 180, 360] }}
                   transition={{ duration: 6, repeat: Infinity }}
-                  className="absolute -top-4 -right-4 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center shadow-lg"
+                  className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg"
                 >
                   <Code size={24} className="text-white" />
                 </motion.div>
-                
+
                 <motion.div
                   animate={{ y: [10, -10, 10], rotate: [360, 180, 0] }}
                   transition={{ duration: 8, repeat: Infinity }}
-                  className="absolute -bottom-4 -left-4 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center shadow-lg"
+                  className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg"
                 >
                   <Palette size={24} className="text-white" />
                 </motion.div>
@@ -159,7 +159,7 @@ const ModernAbout = () => {
                     whileHover={{ scale: 1.05 }}
                     className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl text-center shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    <div className="text-blue-500 mb-2 flex justify-center">
+                    <div className="text-cyan-500 mb-2 flex justify-center">
                       {stat.icon}
                     </div>
                     <div className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-1">

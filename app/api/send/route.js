@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
+// Use a properly formatted from email with fallback
+const fromEmail = process.env.FROM_EMAIL || "Mahmoud Portfolio <onboarding@resend.dev>";
 
 export async function POST(req) {
   try {
@@ -16,18 +17,18 @@ export async function POST(req) {
       );
     }
 
-    // إرسال الإيميل
+    // إرسال الإيميل - في وضع الاختبار، يمكن فقط الإرسال للبريد المُتحقق منه
     const { data, error } = await resend.emails.send({
       from: fromEmail,
-      to: ["mahmoudsruby@gmail.com", email], // ليك + المستخدم
-      subject,
+      to: ["mahmoudsruby@gmail.com"], // Only verified email in testing mode
+      subject: `${subject} - from ${email}`,
       html: `
         <h2>${subject}</h2>
-        <p><strong>Sender:</strong> ${email}</p>
+        <p><strong>Sender Email:</strong> ${email}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
         <hr/>
-        <p>Sent from Codera website 🚀</p>
+        <p>Sent from Mahmoud's Portfolio 🚀</p>
       `,
     });
 

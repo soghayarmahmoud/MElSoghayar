@@ -1,8 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Sparkles } from 'lucide-react';
 
 const ModernContact = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +13,7 @@ const ModernContact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [focusedField, setFocusedField] = useState(null);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -21,7 +22,6 @@ const ModernContact = () => {
     });
   };
 
-  // ✅ الكود الجديد هنا
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -61,19 +61,22 @@ const ModernContact = () => {
       icon: <Mail size={24} />,
       title: 'Email',
       value: 'alsighiar@gmail.com',
-      href: 'mailto:alsighiar@gmail.com'
+      href: 'mailto:alsighiar@gmail.com',
+      gradient: 'from-blue-500 to-cyan-500'
     },
     {
       icon: <Phone size={24} />,
       title: 'Phone',
       value: '+20 101 959 3092',
-      href: 'tel:+201019593092'
+      href: 'tel:+201019593092',
+      gradient: 'from-purple-500 to-pink-500'
     },
     {
       icon: <MapPin size={24} />,
       title: 'Location',
       value: 'Luxor, Egypt',
-      href: '#'
+      href: '#',
+      gradient: 'from-orange-500 to-red-500'
     }
   ];
 
@@ -90,9 +93,39 @@ const ModernContact = () => {
     visible: { y: 0, opacity: 1, transition: { duration: 0.5 } }
   };
 
+  // Floating particles animation
+  const particleVariants = {
+    animate: {
+      y: [0, -20, 0],
+      opacity: [0.3, 0.6, 0.3],
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
-    <section id="contact" className="py-20 bg-slate-50 dark:bg-slate-800">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="relative py-20 bg-slate-50 dark:bg-slate-800 overflow-hidden">
+      {/* Animated Background Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            variants={particleVariants}
+            animate="animate"
+            className="absolute w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-20"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -102,8 +135,16 @@ const ModernContact = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="inline-block mb-4"
+            >
+              <Sparkles className="w-12 h-12 text-blue-600 dark:text-blue-400" />
+            </motion.div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Get In Touch
               </span>
             </h2>
@@ -134,12 +175,17 @@ const ModernContact = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.02, x: 10 }}
-                    className="flex items-center p-6 bg-white dark:bg-slate-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+                    className="flex items-center p-6 bg-white dark:bg-slate-900 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                    {/* Gradient overlay on hover */}
+                    <motion.div
+                      className={`absolute inset-0 bg-gradient-to-r ${info.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                    />
+
+                    <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-r ${info.gradient} rounded-lg flex items-center justify-center text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
                       {info.icon}
                     </div>
-                    <div className="ml-4">
+                    <div className="ml-4 relative z-10">
                       <h4 className="font-semibold text-slate-800 dark:text-slate-200">
                         {info.title}
                       </h4>
@@ -156,64 +202,109 @@ const ModernContact = () => {
             <motion.div variants={itemVariants}>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                      Your Name
-                    </label>
+                  {/* Name Input */}
+                  <div className="relative">
                     <motion.input
-                      whileFocus={{ scale: 1.02 }}
+                      whileFocus={{ scale: 1.01 }}
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField('name')}
+                      onBlur={() => setFocusedField(null)}
                       required
-                      className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-slate-900 dark:text-slate-100"
+                      className="peer w-full px-4 py-3 pt-6 bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-600 rounded-lg focus:ring-0 focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-300 text-slate-900 dark:text-slate-100 placeholder-transparent"
+                      placeholder="Your Name"
                     />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                      Your Email
+                    <label className="absolute left-4 top-2 text-xs font-medium text-slate-600 dark:text-slate-400 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:top-3.5 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500 dark:peer-focus:text-blue-400">
+                      Your Name
                     </label>
+                    {focusedField === 'name' && (
+                      <motion.div
+                        layoutId="inputGlow"
+                        className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur-xl opacity-20"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                  </div>
+
+                  {/* Email Input */}
+                  <div className="relative">
                     <motion.input
-                      whileFocus={{ scale: 1.02 }}
+                      whileFocus={{ scale: 1.01 }}
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField('email')}
+                      onBlur={() => setFocusedField(null)}
                       required
-                      className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-slate-900 dark:text-slate-100"
+                      className="peer w-full px-4 py-3 pt-6 bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-600 rounded-lg focus:ring-0 focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-300 text-slate-900 dark:text-slate-100 placeholder-transparent"
+                      placeholder="Your Email"
                     />
+                    <label className="absolute left-4 top-2 text-xs font-medium text-slate-600 dark:text-slate-400 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:top-3.5 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500 dark:peer-focus:text-blue-400">
+                      Your Email
+                    </label>
+                    {focusedField === 'email' && (
+                      <motion.div
+                        layoutId="inputGlow"
+                        className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur-xl opacity-20"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Subject
-                  </label>
+                {/* Subject Input */}
+                <div className="relative">
                   <motion.input
-                    whileFocus={{ scale: 1.02 }}
+                    whileFocus={{ scale: 1.01 }}
                     type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
+                    onFocus={() => setFocusedField('subject')}
+                    onBlur={() => setFocusedField(null)}
                     required
-                    className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-slate-900 dark:text-slate-100"
+                    className="peer w-full px-4 py-3 pt-6 bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-600 rounded-lg focus:ring-0 focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-300 text-slate-900 dark:text-slate-100 placeholder-transparent"
+                    placeholder="Subject"
                   />
+                  <label className="absolute left-4 top-2 text-xs font-medium text-slate-600 dark:text-slate-400 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:top-3.5 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500 dark:peer-focus:text-blue-400">
+                    Subject
+                  </label>
+                  {focusedField === 'subject' && (
+                    <motion.div
+                      layoutId="inputGlow"
+                      className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur-xl opacity-20"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                    Your Message
-                  </label>
+                {/* Message Textarea */}
+                <div className="relative">
                   <motion.textarea
-                    whileFocus={{ scale: 1.02 }}
+                    whileFocus={{ scale: 1.01 }}
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
+                    onFocus={() => setFocusedField('message')}
+                    onBlur={() => setFocusedField(null)}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-slate-900 dark:text-slate-100 resize-none"
+                    className="peer w-full px-4 py-3 pt-6 bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-600 rounded-lg focus:ring-0 focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-300 text-slate-900 dark:text-slate-100 resize-none placeholder-transparent"
+                    placeholder="Your Message"
                   />
+                  <label className="absolute left-4 top-2 text-xs font-medium text-slate-600 dark:text-slate-400 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:top-3.5 peer-focus:top-2 peer-focus:text-xs peer-focus:text-blue-500 dark:peer-focus:text-blue-400">
+                    Your Message
+                  </label>
+                  {focusedField === 'message' && (
+                    <motion.div
+                      layoutId="inputGlow"
+                      className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur-xl opacity-20"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
                 </div>
 
                 {/* Submit Button */}
@@ -222,48 +313,67 @@ const ModernContact = () => {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="relative w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-4 px-6 rounded-lg font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 overflow-hidden group"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                        className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
-                      />
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send size={20} />
-                      <span>Send Message</span>
-                    </>
-                  )}
+                  {/* Animated gradient overlay */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    animate={{
+                      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  />
+
+                  <span className="relative z-10 flex items-center space-x-2">
+                    {isSubmitting ? (
+                      <>
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                          className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                        />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send size={20} />
+                        <span>Send Message</span>
+                      </>
+                    )}
+                  </span>
                 </motion.button>
 
                 {/* Status Messages */}
-                {submitStatus && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`flex items-center space-x-2 p-4 rounded-lg ${
-                      submitStatus === 'success'
-                        ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400'
-                        : 'bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400'
-                    }`}
-                  >
-                    {submitStatus === 'success' ? (
-                      <CheckCircle size={20} />
-                    ) : (
-                      <AlertCircle size={20} />
-                    )}
-                    <span>
-                      {submitStatus === 'success'
-                        ? 'Message sent successfully!'
-                        : 'Something went wrong. Please try again.'}
-                    </span>
-                  </motion.div>
-                )}
+                <AnimatePresence>
+                  {submitStatus && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -10, scale: 0.9 }}
+                      className={`flex items-center space-x-2 p-4 rounded-lg shadow-lg ${submitStatus === 'success'
+                          ? 'bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 text-green-700 dark:text-green-400 border-2 border-green-200 dark:border-green-800'
+                          : 'bg-gradient-to-r from-red-50 to-rose-50 dark:from-red-900/20 dark:to-rose-900/20 text-red-700 dark:text-red-400 border-2 border-red-200 dark:border-red-800'
+                        }`}
+                    >
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", stiffness: 200 }}
+                      >
+                        {submitStatus === 'success' ? (
+                          <CheckCircle size={24} />
+                        ) : (
+                          <AlertCircle size={24} />
+                        )}
+                      </motion.div>
+                      <span className="font-medium">
+                        {submitStatus === 'success'
+                          ? '✨ Message sent successfully! I\'ll get back to you soon.'
+                          : '❌ Something went wrong. Please try again.'}
+                      </span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </form>
             </motion.div>
           </div>
