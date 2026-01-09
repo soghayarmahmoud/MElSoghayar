@@ -22,7 +22,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Google AdSense */}
+        {/* Google AdSense Verification */}
+        <meta name="google-adsense-account" content="ca-pub-3053984425671049" />
+        
+        {/* Google AdSense Script */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3053984425671049"
