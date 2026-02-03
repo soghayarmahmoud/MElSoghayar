@@ -43,17 +43,17 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* Simple blue selection */
 ::selection {
-  background-color: #10b981;
+  background-color: #2563eb;
   color: white
 }
 
 html {
   scroll-behavior: smooth;
-
 }
 
-/* Modern scrollbar styles */
+/* Simple scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -63,141 +63,23 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #10b981, #14b8a6, #06b6d4);
+  background: #2563eb;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #059669, #0d9488, #0891b2);
+  background: #1e40af;
 }
 
-/* Smooth transitions for all elements */
+/* Minimal transitions */
 * {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-/* Enhanced gradient text utilities */
-.gradient-text {
-  background: linear-gradient(135deg, #10b981, #14b8a6, #06b6d4, #8b5cf6);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 3s ease infinite;
-}
-
-.gradient-text-primary {
-  background: linear-gradient(90deg, #10b981, #14b8a6, #06b6d4);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 4s ease infinite;
-}
-
-.gradient-text-secondary {
-  background: linear-gradient(90deg, #14b8a6, #10b981, #06b6d4);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 5s ease infinite;
-}
-
-@keyframes gradient-shift {
-
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-/* Glassmorphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.dark .glass {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Custom animations */
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
-  }
-
-  50% {
-    box-shadow: 0 0 40px rgba(16, 185, 129, 0.6);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 2.5s ease-in-out forwards;
-  /* Adjust duration and easing as needed */
-}
-
-@keyframes fadeInSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-    /* Starts 20px below its final position */
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    /* Ends at its original position */
-  }
-}
-
-.animate-fade-in-slide-up {
-  animation: fadeInSlideUp 2.5s ease-out forwards;
+  transition-property: color, background-color, border-color, opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 200ms;
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.5rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
