@@ -72,15 +72,15 @@ const ModernContact = () => {
     },
     {
       icon: <Phone size={24} />,
-      title: 'Phone',
+      title: 'WhatsApp',
       value: '+20 101 959 3092',
-      href: 'tel:+201019593092'
+      href: 'https://wa.me/+201019593092'
     },
     {
       icon: <Phone size={24} />,
-      title: 'WhatsApp',
+      title: 'Phone',
       value: '+20 110 102 5358',
-      href: 'https://wa.me/201101025358'
+      href: 'tel:+201101025358'
     },
     {
       icon: <MapPin size={24} />,
