@@ -35,7 +35,7 @@ const ModernContact = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: '4e8f5c7e-9d3b-4f1a-8e2c-6a5b9c7d3e4f', // Replace with your Web3Forms access key from https://web3forms.com
+          access_key: '4a69c09d-9ee7-4484-9880-0fa8ab1e7292', // Your verified Web3Forms access key
           name: formData.name,
           email: formData.email,
           subject: formData.subject,

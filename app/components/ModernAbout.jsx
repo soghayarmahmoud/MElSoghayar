@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Code, Database, Globe } from 'lucide-react';
-import OptimizedImage from './OptimizedImage';
+import Image from 'next/image';
 
 const ModernAbout = () => {
   const skills = [
@@ -78,13 +78,12 @@ const ModernAbout = () => {
               <div className="relative mx-auto w-full max-w-sm">
                 <div className="w-80 h-80 mx-auto bg-blue-600 rounded-2xl shadow-xl p-1">
                   <div className="w-full h-full bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
-                    <OptimizedImage
+                    <Image
                       src="/images/about.jpg"
                       alt="Profile"
-                      width={288}
-                      height={288}
-                      className="w-full h-full"
-                      objectFit="cover"
+                      width={320}
+                      height={320}
+                      className="w-full h-full object-cover"
                       priority={true}
                     />
                   </div>

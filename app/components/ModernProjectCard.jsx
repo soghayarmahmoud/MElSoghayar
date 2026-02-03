@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Download, ArrowRight } from 'lucide-react';
-import OptimizedImage from './OptimizedImage';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const ModernProjectCard = ({ project, index }) => {
@@ -41,13 +41,12 @@ const ModernProjectCard = ({ project, index }) => {
           transition={{ duration: 0.6 }}
           className="w-full h-full"
         >
-          <OptimizedImage
+          <Image
             src={project.image || '/images/b1.jpg'}
             alt={project.title}
             width={400}
             height={300}
-            className="w-full h-full"
-            objectFit="cover"
+            className="w-full h-full object-cover"
           />
         </motion.div>
 
