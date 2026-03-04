@@ -56,7 +56,7 @@ const ModernProjects = () => {
             </div>
           </div>
 
-          {/* Ad placement before projects */}
+
           <AdsenseAd adSlot="1234567890" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-6">
@@ -71,7 +71,6 @@ const ModernProjects = () => {
             </AnimatePresence>
           </div>
 
-          {/* Ad placement after projects */}
           <div className="mt-16">
             <AdsenseAd adSlot="9876543210" />
           </div>
