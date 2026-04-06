@@ -3,7 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getAllProjects } from '@/lib/projectsData';
-
+import { useState } from 'react';
+import AdsenseAd from './AdsenseAd';
+import ModernProjectCard from './ModernProjectCard';
 const ModernProjects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
