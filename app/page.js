@@ -1,5 +1,5 @@
 'use client';
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import ModernHeader from "./components/ModernHeader";
 import ModernHero from "./components/ModernHero";
 import ModernAbout from "./components/ModernAbout";
