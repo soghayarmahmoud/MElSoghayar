@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from './contexts/ThemeContext';
 import Script from 'next/script';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
