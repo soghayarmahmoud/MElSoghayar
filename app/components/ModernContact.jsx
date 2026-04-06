@@ -101,7 +101,7 @@ const ModernContact = () => {
             </h2>
             <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Let's collaborate on your next project
+              Let&apos;s collaborate on your next project
             </p>
           </div>
 
@@ -110,10 +110,10 @@ const ModernContact = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-4">
-                  Let's Build Something Amazing
+                  Let&apos;s Build Something Amazing
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                  I'm always open to discussing new opportunities, creative projects, or potential collaborations.
+                  I&apos;m always open to discussing new opportunities, creative projects, or potential collaborations.
                 </p>
               </div>
 

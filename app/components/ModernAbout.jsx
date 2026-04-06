@@ -38,7 +38,7 @@ const ModernAbout = () => {
             {/* Left Column - Text Content */}
             <div className="space-y-8">
               <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-                I'm a passionate full-stack developer with 3+ years of experience creating innovative web and mobile solutions. I specialize in modern technologies like React, Next.js, Flutter, and Node.js, always striving to deliver exceptional user experiences and clean, maintainable code.
+                I&apos;m a passionate full-stack developer with 3+ years of experience creating innovative web and mobile solutions. I specialize in modern technologies like React, Next.js, Flutter, and Node.js, always striving to deliver exceptional user experiences and clean, maintainable code.
               </p>
 
               {/* Skills */}

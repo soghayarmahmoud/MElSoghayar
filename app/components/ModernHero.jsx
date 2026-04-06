@@ -23,7 +23,7 @@ const ModernHero = () => {
                 transition={{ duration: 0.5 }}
                 className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-4"
               >
-                Hello, I'm
+                Hello, I&apos;m
               </motion.p>
 
               {/* Name */}
