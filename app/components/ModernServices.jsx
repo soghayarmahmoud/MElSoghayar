@@ -1,30 +1,29 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Code, Smartphone, Palette, MessageCircle } from 'lucide-react';
+import Image from 'next/image';
 
 const ModernServices = () => {
   const services = [
     {
-      icon: <Code size={40} />,
+      logo: '/images/logos/cipher.jpg',
       title: 'Web Development',
       description: 'Custom web applications built with modern technologies',
       features: ['React/Next.js', 'Node.js', 'Database Design', 'API Development']
     },
     {
-      icon: <Smartphone size={40} />,
+      logo: '/images/logos/Depi.jpeg',
       title: 'Mobile Apps',
       description: 'Cross-platform mobile applications for iOS and Android',
       features: ['React Native', 'Flutter', 'iOS/Android', 'Cross-platform']
     },
     {
-      icon: <Palette size={40} />,
+      logo: '/images/logos/mostaql.png',
       title: 'UI/UX Design',
       description: 'Beautiful and intuitive user interfaces and experiences',
       features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems']
     },
     {
-      icon: <MessageCircle size={40} />,
+      logo: '/images/logos/upwork.png',
       title: 'Tech Consulting',
       description: 'Strategic technology consulting for your business',
       features: ['Architecture', 'Code Review', 'Performance', 'Best Practices']
@@ -32,58 +31,60 @@ const ModernServices = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-white dark:bg-slate-900">
+    <section id="services" className="py-20 bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white leading-tight">
               Services
             </h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <div className="w-20 h-1 bg-gray-800 mx-auto mb-8"></div>
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
               Comprehensive solutions to help your business grow
             </p>
           </div>
 
           {/* Services Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
             {services.map((service, index) => (
-              <motion.div
+              <div
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-md hover:shadow-lg border border-blue-100 dark:border-slate-700"
+                className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-md border border-gray-200 dark:border-slate-700"
               >
-                {/* Icon */}
-                <div className="inline-flex p-4 rounded-xl bg-blue-600 text-white mb-6">
-                  {service.icon}
+                {/* Logo */}
+                <div className="flex justify-center mb-6">
+                  <Image
+                    src={service.logo}
+                    alt={`${service.title} logo`}
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-3">
+                <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 mb-4 text-center leading-tight">
                   {service.title}
                 </h3>
 
-                <p className="text-slate-600 dark:text-slate-400 text-lg mb-6 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-400 text-base mb-6 leading-relaxed text-center">
                   {service.description}
                 </p>
 
                 {/* Features */}
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {service.features.map((feature) => (
                     <div
                       key={feature}
-                      className="flex items-center text-slate-600 dark:text-slate-300"
+                      className="flex items-center text-slate-600 dark:text-slate-300 text-sm"
                     >
-                      <div className="w-2 h-2 rounded-full bg-blue-600 mr-3" />
-                      {feature}
+                      <div className="w-2 h-2 rounded-full bg-gray-400 mr-3 flex-shrink-0" />
+                      <span>{feature}</span>
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
