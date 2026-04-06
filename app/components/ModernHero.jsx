@@ -120,14 +120,7 @@ const ModernHero = () => {
                   />
                 </div>
 
-                {/* Simple Icon Badges */}
-                <div className="absolute -top-4 -right-4 bg-blue-600 p-4 rounded-xl shadow-lg">
-                  <Download className="w-8 h-8 text-white" />
-                </div>
 
-                <div className="absolute -bottom-4 -left-4 bg-blue-500 p-4 rounded-xl shadow-lg">
-                  <MessageCircle className="w-8 h-8 text-white" />
-                </div>
               </div>
             </motion.div>
           </div>

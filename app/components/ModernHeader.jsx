@@ -41,11 +41,9 @@ const ModernHeader = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">M</span>
-            </div>
-            <Link href="#hero" className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              Mahmoud El Soghayar
+            <Link href="#hero" className="text-2xl md:text-3xl font-bold transition-transform hover:scale-105 tracking-tight">
+              <span className="text-blue-600 dark:text-blue-500">Elsogh</span>
+              <span className="text-slate-900 dark:text-white">ayar</span>
             </Link>
           </div>
 
