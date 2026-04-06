@@ -100,25 +100,17 @@ export default function ProjectDetailPage() {
 
                             {/* Action Buttons */}
                             <div className="flex flex-wrap gap-4">
-                                <a
-                                    href={project.liveUrl}
-                                    download={project.downloadApk ? `${project.title}.apk` : undefined}
-                                    target={!project.downloadApk ? "_blank" : undefined}
-                                    rel={!project.downloadApk ? "noopener noreferrer" : undefined}
-                                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center space-x-2 shadow-md hover:shadow-lg transition-all"
-                                >
-                                    {project.downloadApk ? (
-                                        <>
-                                            <Download size={20} />
-                                            <span>Download APK</span>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <ExternalLink size={20} />
-                                            <span>View Project</span>
-                                        </>
-                                    )}
-                                </a>
+                                {!project.downloadApk && project.liveUrl && (
+                                    <a
+                                        href={project.liveUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center space-x-2 shadow-md hover:shadow-lg transition-all"
+                                    >
+                                        <ExternalLink size={20} />
+                                        <span>View Project</span>
+                                    </a>
+                                )}
 
                                 {project.githubUrl && project.githubUrl !== '#' && project.githubUrl !== '' && (
                                     <a

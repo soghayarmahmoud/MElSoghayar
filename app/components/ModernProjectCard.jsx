@@ -64,15 +64,16 @@ const ModernProjectCard = ({ project, index }) => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3">
-          <a
-            href={project.liveUrl}
-            download={project.downloadApk ? `${project.title}.apk` : undefined}
-            target={!project.downloadApk ? "_blank" : undefined}
-            rel={!project.downloadApk ? "noopener noreferrer" : undefined}
-            className="flex-1 bg-gray-800 text-white text-center py-3 px-4 rounded-lg font-medium hover:bg-gray-700 transition-all duration-200"
-          >
-            {project.downloadApk ? 'Download' : 'Live Demo'}
-          </a>
+          {!project.downloadApk && project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 bg-gray-800 text-white text-center py-3 px-4 rounded-lg font-medium hover:bg-gray-700 transition-all duration-200"
+            >
+              Live Demo
+            </a>
+          )}
 
           {project.githubUrl && project.githubUrl !== '#' && project.githubUrl !== '' && (
             <a

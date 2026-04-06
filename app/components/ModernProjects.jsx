@@ -24,26 +24,26 @@ const ModernProjects = () => {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-slate-800">
+    <section id="projects" className="py-24 bg-slate-50 dark:bg-slate-900 border-t border-b border-gray-100 dark:border-slate-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white leading-tight">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
               Projects
             </h2>
-            <div className="w-20 h-1 bg-gray-800 mx-auto mb-8"></div>
-            <p className="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
               Some of my recent work showcasing modern technologies
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 mb-2">
+            <div className="flex flex-wrap justify-center gap-4 mt-8 mb-2">
               {filters.map((filter) => (
                 <button
                   key={filter.key}
                   onClick={() => setActiveFilter(filter.key)}
                   className={`px-8 py-3 rounded-lg font-medium text-base transition-all duration-200 ${activeFilter === filter.key
-                    ? 'bg-gray-800 text-white shadow-md'
-                    : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 border border-gray-200 dark:border-slate-700'
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700'
                     }`}
                 >
                   <span>{filter.label}</span>
