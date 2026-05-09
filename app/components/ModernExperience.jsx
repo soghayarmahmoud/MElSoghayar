@@ -2,148 +2,43 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Briefcase, Award, Building2, CheckCircle } from 'lucide-react';
+import { Briefcase, Award, Building2, CheckCircle, Star } from 'lucide-react';
+import { getWorkExperience, getTraining, getCertifications, getOrganizations } from '@/lib/experienceData';
 
 const ModernExperience = () => {
     const [workFilter, setWorkFilter] = useState('all');
     const [trainingFilter, setTrainingFilter] = useState('all');
     const [certFilter, setCertFilter] = useState('all');
 
-    const experiences = [
-        {
-            id: 1,
-            company: 'Cipher',
-            role: 'Frontend Instructor',
-            description: 'Teaching modern frontend development technologies including React, Next.js, and responsive design patterns',
-            image: '/images/logos/cipher.jpg',
-            type: 'teaching',
-            duration: '2024 - Present',
-            achievements: ['Mentored 50+ students', 'Created curriculum', 'Code reviews']
-        },
-        {
-            id: 2,
-            company: 'AMIT',
-            role: 'Software Tester',
-            description: 'Ensuring software quality through comprehensive testing methodologies and automated test development',
-            image: '/images/logos/amit.png',
-            type: 'internship',
-            duration: '2025 - 2026',
-            achievements: ['100+ test cases', 'Bug tracking', 'QA automation']
-        },
-        {
-            id: 3,
-            company: 'Freelancer',
-            role: 'Web Developer',
-            description: 'Creating custom web applications and solutions for diverse clients using cutting-edge web technologies',
-            image: '/images/logos/mostaql.png',
-            type: 'freelance',
-            duration: '2023 - Present',
-            achievements: ['20+ projects', 'Client satisfaction', 'Full-stack solutions']
-        },
-        {
-            id: 4,
-            company: 'Freelancer',
-            role: 'Mobile App Developer',
-            description: 'Building cross-platform mobile applications using Flutter with beautiful UI and smooth performance',
-            image: '/images/logos/upwork.png',
-            type: 'freelance',
-            duration: '2022 - Present',
-            achievements: ['15+ apps', 'Cross-platform', 'Firebase integration']
-        }
-    ];
+    const experiences = getWorkExperience();
+    const training = getTraining();
+    const certifications = getCertifications();
+    const organizations = getOrganizations();
 
-    const training = [
+    const reviews = [
         {
             id: 1,
-            program: 'EGFWD',
-            title: 'Frontend Web Development',
-            duration: '6 months',
-            description: 'Advanced frontend development with React, Next.js, and modern CSS',
-            type: 'bootcamp',
-            logo: '/images/logos/Depi.jpeg'
+            quote: 'Working with this team has been a game-changer. Their mobile and web development expertise turned our concept into a smooth, polished product. Delivery was fast, communication was clear, and the results exceeded expectations.',
+            reviewer: 'Mona Farid',
+            title: 'Product Lead',
+            company: 'Digital Labs',
+            rating: 5
         },
         {
             id: 2,
-            program: 'ITIDA Gigs',
-            title: 'Freelancing Training',
-            duration: '3 months',
-            description: 'Professional freelancing skills, client management, and project delivery',
-            type: 'training',
-            logo: '/images/logos/cipher.jpg'
+            quote: 'The Oriva Foundation launch was handled with professionalism and vision. They built an inspiring digital presence and helped our mission reach more people through modern, reliable technology.',
+            reviewer: 'Ahmed Nabil',
+            title: 'Community Partner',
+            company: 'Social Impact Hub',
+            rating: 5
         },
         {
             id: 3,
-            program: 'DEPI',
-            title: 'Software Testing',
-            duration: '4 months',
-            description: 'Comprehensive QA testing, automation, and best practices',
-            type: 'bootcamp',
-            logo: '/images/logos/Depi.jpeg'
-        }
-    ];
-
-    const certifications = [
-        {
-            id: 1,
-            title: 'Frontend Web Development Certificate',
-            issuer: 'EGFWD',
-            date: '2024',
-            type: 'diploma',
-            skills: ['React', 'Next.js', 'CSS', 'JavaScript']
-        },
-        {
-            id: 2,
-            title: 'Software Testing Professional',
-            issuer: 'DEPI',
-            date: '2024',
-            type: 'diploma',
-            skills: ['QA', 'Automation', 'Testing Tools']
-        },
-        {
-            id: 3,
-            title: 'Flutter Development Certification',
-            issuer: 'Independent',
-            date: '2023',
-            type: 'course',
-            skills: ['Flutter', 'Dart', 'Firebase']
-        }
-    ];
-
-    const organizations = [
-        {
-            id: 1,
-            name: 'Cipher',
-            logo: '/images/logos/cipher.jpg',
-            description: 'Technology education and training',
-            type: 'education'
-        },
-        {
-            id: 2,
-            name: 'DEPI',
-            logo: '/images/logos/Depi.jpeg',
-            description: 'Digital Egypt Pioneers Initiative',
-            type: 'initiative'
-        },
-        {
-            id: 3,
-            name: 'Egypt Food Bank',
-            logo: '/images/logos/EFB.png',
-            description: 'Food security and community support',
-            type: 'nonprofit'
-        },
-        {
-            id: 4,
-            name: 'Mostaql',
-            logo: '/images/logos/mostaql.png',
-            description: 'Freelance platform for developers',
-            type: 'platform'
-        },
-        {
-            id: 5,
-            name: 'Upwork',
-            logo: '/images/logos/upwork.png',
-            description: 'Global freelancing marketplace',
-            type: 'platform'
+            quote: 'Exceptional quality and attention to detail. Their freelance work on both mobile and web platforms showed real craftsmanship, bringing a refined user experience to every screen.',
+            reviewer: 'Sara Tarek',
+            title: 'Startup Founder',
+            company: 'Moqawla',
+            rating: 5
         }
     ];
 
@@ -297,13 +192,12 @@ const ModernExperience = () => {
                                     className="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 dark:border-slate-700 transition-all hover:border-green-400 dark:hover:border-green-500 h-full flex flex-col"
                                 >
                                     {/* Logo Section */}
-                                    <div className="relative h-32 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center overflow-hidden">
+                                    <div className="relative h-32 bg-gradient-to-br from-green-500 to-green-600 overflow-hidden">
                                         <Image
                                             src={item.logo}
                                             alt={item.program}
-                                            width={80}
-                                            height={80}
-                                            className="object-contain group-hover:scale-110 transition-transform duration-300"
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-300"
                                         />
                                     </div>
 
@@ -439,6 +333,49 @@ const ModernExperience = () => {
                                     <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                                         {org.description}
                                     </p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Reviews Section */}
+                    <div className="mt-24">
+                        <div className="flex items-center gap-3 mb-8">
+                            <Star className="w-8 h-8 text-yellow-500" />
+                            <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Client Reviews</h3>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {reviews.map((review, index) => (
+                                <motion.div
+                                    key={review.id}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.45, delay: index * 0.12 }}
+                                    className="group relative overflow-hidden rounded-3xl border border-gray-100 dark:border-slate-700 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 p-8 shadow-xl hover:shadow-2xl transition-all"
+                                >
+                                    <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-80" />
+                                    <div className="relative z-10 flex h-full flex-col gap-6">
+                                        <div className="space-y-4">
+                                            <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm">
+                                                “{review.quote}”
+                                            </p>
+                                            <div className="flex items-center gap-2">
+                                                {Array.from({ length: review.rating }).map((_, idx) => (
+                                                    <Star key={idx} className="w-4 h-4 text-yellow-400" />
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="mt-auto pt-4 border-t border-gray-200 dark:border-slate-700">
+                                            <p className="text-base font-semibold text-slate-900 dark:text-white">
+                                                {review.reviewer}
+                                            </p>
+                                            <p className="text-sm text-slate-500 dark:text-slate-400">
+                                                {review.title} • {review.company}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </motion.div>
                             ))}
                         </div>
