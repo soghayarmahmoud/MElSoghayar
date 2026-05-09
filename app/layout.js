@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ThemeProvider } from './contexts/ThemeContext';
 import Script from 'next/script';
 import { SpeedInsights } from '@vercel/speed-insights/next';
