@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Block access to sensitive files
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Allow crawling of main content
+Allow: /#experience
+Allow: /#services
+Allow: /#projects
+Allow: /#reviews
+Allow: /#contact
+
+# Sitemap
+Sitemap: https://elsoghayar.dev/sitemap.xml

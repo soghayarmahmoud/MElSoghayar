@@ -18,26 +18,26 @@ const ModernExperience = () => {
     const reviews = [
         {
             id: 1,
-            quote: 'Working with this team has been a game-changer. Their mobile and web development expertise turned our concept into a smooth, polished product. Delivery was fast, communication was clear, and the results exceeded expectations.',
-            reviewer: 'Mona Farid',
-            title: 'Product Lead',
-            company: 'Digital Labs',
+            quote: 'Exceptional freelancer with deep expertise in both web and mobile development. Their attention to detail and ability to deliver complex projects on time is remarkable. Highly recommend for any tech project.',
+            reviewer: 'Ahmed Hassan',
+            title: 'Tech Entrepreneur',
+            company: 'Independent Client',
             rating: 5
         },
         {
             id: 2,
-            quote: 'The Oriva Foundation launch was handled with professionalism and vision. They built an inspiring digital presence and helped our mission reach more people through modern, reliable technology.',
-            reviewer: 'Ahmed Nabil',
-            title: 'Community Partner',
-            company: 'Social Impact Hub',
+            quote: 'Outstanding professional who consistently exceeds expectations. Their freelancing approach combines technical excellence with great communication. A true expert in modern web technologies.',
+            reviewer: 'Fatima Al-Zahra',
+            title: 'Project Manager',
+            company: 'Digital Agency',
             rating: 5
         },
         {
             id: 3,
-            quote: 'Exceptional quality and attention to detail. Their freelance work on both mobile and web platforms showed real craftsmanship, bringing a refined user experience to every screen.',
-            reviewer: 'Sara Tarek',
+            quote: 'Reliable and skilled developer who brings creativity and precision to every project. Their freelancing experience across multiple platforms shows their versatility and commitment to quality.',
+            reviewer: 'Omar Khalid',
             title: 'Startup Founder',
-            company: 'Moqawla',
+            company: 'Tech Startup',
             rating: 5
         }
     ];
@@ -307,34 +307,61 @@ const ModernExperience = () => {
                             <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Organizations</h3>
                         </div>
 
-                        {/* Organizations Cards */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                            {organizations.map((org, index) => (
-                                <motion.div
-                                    key={org.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                                    className="group bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md hover:shadow-2xl border border-gray-100 dark:border-slate-700 transition-all hover:border-orange-400 dark:hover:border-orange-500 flex flex-col items-center text-center"
-                                >
-                                    <div className="relative w-full h-20 mb-4 flex items-center justify-center">
-                                        <Image
-                                            src={org.logo}
-                                            alt={`${org.name} logo`}
-                                            width={64}
-                                            height={64}
-                                            className="object-contain group-hover:scale-110 transition-transform duration-300"
-                                        />
-                                    </div>
-                                    <h4 className="font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
-                                        {org.name}
-                                    </h4>
-                                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                        {org.description}
-                                    </p>
-                                </motion.div>
-                            ))}
+                        {/* Organizations Slider */}
+                        <div className="relative">
+                            <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-4 px-2">
+                                {organizations.map((org, index) => (
+                                    <motion.div
+                                        key={org.id}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                                        className="group bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md hover:shadow-2xl border border-gray-100 dark:border-slate-700 transition-all hover:border-orange-400 dark:hover:border-orange-500 flex flex-col items-center text-center min-w-[200px] flex-shrink-0"
+                                    >
+                                        <div className="relative w-full h-20 mb-4 flex items-center justify-center">
+                                            <Image
+                                                src={org.logo}
+                                                alt={`${org.name} logo`}
+                                                width={64}
+                                                height={64}
+                                                className="object-contain group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        <h4 className="font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                                            {org.name}
+                                        </h4>
+                                        <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                            {org.description}
+                                        </p>
+                                    </motion.div>
+                                ))}
+                            </div>
+                            
+                            {/* Navigation Arrows */}
+                            <button 
+                                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white dark:bg-slate-800 shadow-lg rounded-full p-2 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors border border-gray-200 dark:border-slate-600"
+                                onClick={() => {
+                                    const container = document.querySelector('.overflow-x-auto');
+                                    if (container) container.scrollLeft -= 200;
+                                }}
+                            >
+                                <svg className="w-5 h-5 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            
+                            <button 
+                                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-slate-800 shadow-lg rounded-full p-2 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors border border-gray-200 dark:border-slate-600"
+                                onClick={() => {
+                                    const container = document.querySelector('.overflow-x-auto');
+                                    if (container) container.scrollLeft += 200;
+                                }}
+                            >
+                                <svg className="w-5 h-5 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
 
