@@ -1,13 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTheme } from '../contexts/ThemeContext';
 import { motion } from 'framer-motion';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 
 const ModernHeader = () => {
-  const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -30,59 +28,38 @@ const ModernHeader = () => {
 
   return (
     <motion.header
-      initial={{ opacity: 0, y: -28 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45, ease: 'easeOut' }}
-      className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8"
-    >
-      <nav
-        className={`glass-header-shell mx-auto max-w-6xl rounded-[28px] px-3 py-2.5 sm:px-4 ${
-          isScrolled ? 'is-scrolled' : ''
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'border-b border-white/10 bg-[#111111]/85 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.25)]'
+          : 'bg-transparent'
         }`}
-      >
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Link
-              href="#hero"
-              className="group relative inline-flex items-center text-2xl font-black tracking-[-0.08em] transition-transform duration-300 hover:scale-[1.02]"
-            >
-              <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-500 bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(59,130,246,0.25)]">
-                Elsogh
-              </span>
-              <span className="ml-1 text-slate-900 dark:text-white">ayar</span>
+    >
+      <nav className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between rounded-full border border-white/10 bg-[#121212]/75 px-4 py-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-xl">
+          <div className="flex items-center gap-2">
+            <Link href="#hero" className="text-2xl md:text-3xl font-bold tracking-tight transition-transform hover:scale-105">
+              <span className="text-[#d9a66c]">Elsogh</span>
+              <span className="text-[#f5f5f5]">ayar</span>
             </Link>
           </div>
 
-          <div className="hidden items-center gap-1 rounded-full border border-white/20 bg-white/10 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] dark:border-slate-700/60 dark:bg-slate-900/20 md:flex">
+          <div className="hidden items-center space-x-1 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="header-link relative overflow-hidden rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition-all duration-300 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-300"
+                className="rounded-full px-4 py-2 text-sm font-medium text-[#d4d4d4] transition-colors hover:text-[#f5d6ad]"
               >
                 {item.name}
               </Link>
             ))}
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center space-x-3">
             <button
-              type="button"
-              onClick={toggleTheme}
-              className="group relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/20 text-slate-700 shadow-[0_10px_30px_rgba(15,23,42,0.12)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white dark:border-slate-700/60 dark:bg-slate-900/30 dark:text-slate-100 dark:hover:bg-blue-500"
-              aria-label="Toggle theme"
-            >
-              <span className="absolute inset-0 rounded-full bg-gradient-to-br from-white/40 via-transparent to-blue-500/10 opacity-70" />
-              <span className="relative">
-                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-              </span>
-            </button>
-
-            <button
-              type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/20 text-slate-700 shadow-[0_10px_30px_rgba(15,23,42,0.12)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white md:hidden dark:border-slate-700/60 dark:bg-slate-900/30 dark:text-slate-100 dark:hover:bg-blue-500"
-              aria-label="Toggle menu"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-[#1a1a1a] text-[#f5f5f5] transition-colors hover:bg-[#d9a66c] hover:text-[#121212] md:hidden"
             >
               {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
@@ -90,13 +67,13 @@ const ModernHeader = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="mt-3 overflow-hidden rounded-[22px] border border-white/25 bg-white/10 p-2 shadow-[0_18px_40px_rgba(15,23,42,0.15)] backdrop-blur-xl md:hidden dark:border-slate-700/60 dark:bg-slate-900/20">
+          <div className="mt-3 rounded-[22px] border border-white/10 bg-[#121212]/90 p-3 shadow-[0_18px_40px_rgba(0,0,0,0.25)] md:hidden">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="block rounded-full px-4 py-3 text-sm font-medium text-slate-700 transition-all duration-300 hover:bg-white/25 hover:text-blue-600 dark:text-slate-200 dark:hover:bg-slate-800/70 dark:hover:text-blue-300"
+                className="block rounded-full px-4 py-3 text-sm font-medium text-[#d4d4d4] transition-colors hover:bg-white/5 hover:text-[#f5d6ad]"
               >
                 {item.name}
               </Link>

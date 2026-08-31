@@ -91,48 +91,45 @@ const ModernContact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-slate-900">
+    <section id="contact" className="section-shell py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
-              Get In Touch
+          <div className="mb-16 text-center">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#d9a66c]">Get In Touch</p>
+            <h2 className="mb-6 text-4xl font-black tracking-[-0.06em] text-white md:text-6xl">
+              Let&apos;s build something real.
             </h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-[#d4d4d4] md:text-xl">
               Let&apos;s collaborate on your next project
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
+          <div className="grid gap-12 lg:grid-cols-2">
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-4">
+                <h3 className="mb-4 text-2xl font-semibold text-white">
                   Let&apos;s Build Something Amazing
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed text-[#d4d4d4]">
                   I&apos;m always open to discussing new opportunities, creative projects, or potential collaborations.
                 </p>
               </div>
 
-              {/* Contact Cards */}
               <div className="space-y-4">
                 {contactInfo.map((info) => (
                   <a
                     key={info.title}
                     href={info.href}
-                    className="flex items-center p-6 bg-blue-50 dark:bg-slate-800 rounded-xl hover:shadow-md transition-shadow border border-blue-100 dark:border-slate-700"
+                    className="flex items-center rounded-[24px] border border-white/10 bg-[#141414] p-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)] transition-transform hover:-translate-y-1"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#d9a66c] text-[#121212]">
                       {info.icon}
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-semibold text-slate-800 dark:text-slate-100">
+                      <h4 className="font-semibold text-white">
                         {info.title}
                       </h4>
-                      <p className="text-slate-600 dark:text-slate-400">
+                      <p className="text-[#d4d4d4]">
                         {info.value}
                       </p>
                     </div>
@@ -141,13 +138,11 @@ const ModernContact = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
             <div>
-              <form onSubmit={handleSubmit} className="space-y-6 bg-blue-50 dark:bg-slate-800 rounded-xl p-8 border border-blue-100 dark:border-slate-700">
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* Name Input */}
+              <form onSubmit={handleSubmit} className="space-y-6 rounded-[30px] border border-white/10 bg-[#121212] p-8 shadow-[0_24px_70px_rgba(0,0,0,0.25)]">
+                <div className="grid gap-6 md:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                    <label className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
                       Your Name
                     </label>
                     <input
@@ -156,14 +151,13 @@ const ModernContact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:border-blue-600 text-slate-900 dark:text-slate-100"
+                      className="w-full rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-[#d9a66c] focus:outline-none"
                       placeholder="John Doe"
                     />
                   </div>
 
-                  {/* Email Input */}
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                    <label className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
                       Your Email
                     </label>
                     <input
@@ -172,15 +166,14 @@ const ModernContact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:border-blue-600 text-slate-900 dark:text-slate-100"
+                      className="w-full rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-[#d9a66c] focus:outline-none"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
 
-                {/* Subject Input */}
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                  <label className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
                     Subject
                   </label>
                   <input
@@ -189,14 +182,13 @@ const ModernContact = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:border-blue-600 text-slate-900 dark:text-slate-100"
+                    className="w-full rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-[#d9a66c] focus:outline-none"
                     placeholder="Project inquiry"
                   />
                 </div>
 
-                {/* Message Textarea */}
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                  <label className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
                     Your Message
                   </label>
                   <textarea
@@ -205,20 +197,19 @@ const ModernContact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:border-blue-600 text-slate-900 dark:text-slate-100 resize-none"
+                    className="w-full resize-none rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-[#d9a66c] focus:outline-none"
                     placeholder="Tell me about your project..."
                   />
                 </div>
 
-                {/* Submit Button */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-lg font-semibold text-lg shadow-md hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="flex w-full items-center justify-center space-x-2 rounded-full bg-[#d9a66c] px-6 py-4 text-lg font-semibold text-[#121212] shadow-[0_15px_40px_rgba(217,166,108,0.25)] transition-colors hover:bg-[#f5d6ad] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <div className="h-5 w-5 animate-spin rounded-full border-2 border-[#121212] border-t-transparent" />
                       <span>Sending...</span>
                     </>
                   ) : (
@@ -229,16 +220,15 @@ const ModernContact = () => {
                   )}
                 </button>
 
-                {/* Status Messages */}
                 <AnimatePresence>
                   {submitStatus && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className={`flex items-center space-x-2 p-4 rounded-lg ${submitStatus === 'success'
-                        ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400'
-                        : 'bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400'
+                      className={`flex items-center space-x-2 rounded-2xl p-4 ${submitStatus === 'success'
+                        ? 'bg-[#d9a66c]/10 text-[#f5d6ad] border border-[#d9a66c]/20'
+                        : 'bg-[#d5655b]/10 text-[#f7b1aa] border border-[#d5655b]/20'
                         }`}
                     >
                       {submitStatus === 'success' ? (

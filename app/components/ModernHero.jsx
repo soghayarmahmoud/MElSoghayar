@@ -7,53 +7,49 @@ import Image from 'next/image';
 
 const ModernHero = () => {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Simple background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-slate-900 dark:to-slate-800" />
+    <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28">
+      <div className="absolute inset-0 bg-[#0a0a0a]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(217,166,108,0.12),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.04),_transparent_26%)]" />
 
-      <div className="container mx-auto px-4 z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Content */}
-            <div className="text-center lg:text-left order-2 lg:order-1">
-              {/* Greeting */}
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="order-2 text-center lg:order-1 lg:text-left">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-4"
+                className="mb-4 text-lg text-[#d4d4d4] md:text-xl"
               >
                 Hello, I&apos;m
               </motion.p>
 
-              {/* Name */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-900 dark:text-white"
+                className="mb-6 text-4xl font-black tracking-[-0.06em] text-white md:text-5xl lg:text-6xl"
               >
                 Mahmoud El Soghayar
               </motion.h1>
 
-              {/* Animated Title */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-2xl md:text-3xl lg:text-4xl font-semibold text-blue-600 dark:text-blue-400 mb-8 h-16"
+                className="mb-8 h-16 text-2xl font-semibold text-[#d9a66c] md:text-3xl lg:text-4xl"
               >
                 <TypeAnimation
                   sequence={[
-                    'Full Stack Developer',
+                    'Embedded Systems Engineer',
                     2000,
-                    'React Developer',
+                    'PCB Design Specialist',
                     2000,
-                    'Node.js Developer',
+                    'Microcontroller Developer',
                     2000,
-                    'Flutter Developer',
+                    'MATLAB & Electronics Engineer',
                     2000,
-                    'Online Instructor',
+                    'Instructor & Problem Solver',
                     2000,
                   ]}
                   wrapper="span"
@@ -66,33 +62,31 @@ const ModernHero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed"
+                className="mb-12 text-lg leading-relaxed text-[#d4d4d4] md:text-xl"
               >
-                Passionate about building modern web and mobile applications with cutting-edge technologies.
+                Passionate about designing efficient electronic systems, embedded solutions, and modern technical experiences.
               </motion.p>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
+                className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
               >
-                {/* Download CV Button */}
                 <a
                   href="/documents/Mahmoud_El-Soghayar_CV_EN.pdf"
                   download
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold text-base shadow-md hover:shadow-lg flex items-center space-x-2"
+                  className="flex items-center space-x-2 rounded-full bg-[#d9a66c] px-6 py-3 text-base font-semibold text-[#121212] shadow-[0_15px_40px_rgba(217,166,108,0.25)] transition-colors hover:bg-[#f5d6ad]"
                 >
                   <Download size={20} />
                   <span>Download CV</span>
                 </a>
 
-                {/* Hire Me Button (WhatsApp) */}
                 <a
                   href="https://wa.me/201019593092"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-slate-900 px-6 py-3 rounded-lg font-semibold text-base flex items-center space-x-2"
+                  className="flex items-center space-x-2 rounded-full border border-white/10 bg-[#121212] px-6 py-3 text-base font-semibold text-[#f5f5f5] transition-colors hover:border-[#d9a66c] hover:text-[#f5d6ad]"
                 >
                   <MessageCircle size={20} />
                   <span>Hire Me</span>
@@ -100,27 +94,23 @@ const ModernHero = () => {
               </motion.div>
             </div>
 
-            {/* Right Side - Profile Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="order-1 lg:order-2 flex justify-center items-center"
+              className="order-1 flex items-center justify-center lg:order-2"
             >
               <div className="relative">
-                {/* Image Container */}
-                <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-blue-600 dark:border-blue-400 shadow-xl">
+                <div className="relative h-64 w-64 overflow-hidden rounded-full border border-white/10 bg-[#121212] shadow-[0_30px_70px_rgba(0,0,0,0.3)] md:h-80 md:w-80 lg:h-96 lg:w-96">
                   <Image
                     src="/images/n.jpg"
                     alt="Mahmoud El Soghayar"
                     fill
                     sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
-                    className="object-cover"
+                    className="object-cover grayscale"
                     priority
                   />
                 </div>
-
-
               </div>
             </motion.div>
           </div>

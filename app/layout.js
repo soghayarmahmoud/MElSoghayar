@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from './contexts/ThemeContext';
 import Script from 'next/script';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -167,10 +166,8 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 transition-colors duration-300`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#0A0A0A] text-[#F5F5F5] transition-colors duration-300`}>
+        {children}
         <SpeedInsights />
       </body>
     </html>

@@ -9,41 +9,41 @@ const ModernServices = () => {
 
   const services = [
     {
-      icon: <Monitor className="w-12 h-12 text-blue-600 mb-6 mx-auto" />,
+      icon: <Monitor className="w-12 h-12 text-[#f5d6ad]" />,
       title: 'Front End Development',
       description: 'Building modern, responsive, and pixel-perfect user interfaces using React, Next.js, and advanced CSS frameworks. Focused on excellent UX and accessibility.',
       features: ['React & Next.js', 'Tailwind CSS', 'Responsive Design', 'Web Animation']
     },
     {
-      icon: <Layers className="w-12 h-12 text-blue-600 mb-6 mx-auto" />,
-      title: 'Full Stack Development (MERN)',
-      description: 'Architecting scalable web applications from the ground up using MongoDB, Express, React, and Node.js. Delivering high-performance and secure backends.',
-      features: ['MERN Stack', 'RESTful APIs', 'Database Design', 'Auth & Security']
+      icon: <Layers className="w-12 h-12 text-[#f5d6ad]" />,
+      title: 'Embedded Systems Design',
+      description: 'Designing robust electronic systems and hardware-aware firmware for sensing, control, automation, and smart-device applications.',
+      features: ['PCB Design', 'Microcontroller', 'Firmware Logic', 'System Integration']
     },
     {
-      icon: <Smartphone className="w-12 h-12 text-blue-600 mb-6 mx-auto" />,
-      title: 'Flutter Mobile App Development',
-      description: 'Creating beautiful, natively compiled applications for both Android and iOS platforms from a single codebase using Flutter and Dart.',
-      features: ['Cross-Platform', 'Fluid UI', 'State Management', 'Native Integration']
+      icon: <Smartphone className="w-12 h-12 text-[#f5d6ad]" />,
+      title: 'Electronics Prototyping',
+      description: 'Developing practical proof-of-concept electronics with reliable layouts, testing workflows, and performance validation for engineering projects.',
+      features: ['Arduino', 'Sensors', 'Circuit Debugging', 'Hardware Testing']
     },
     {
-      icon: <ShieldCheck className="w-12 h-12 text-blue-600 mb-6 mx-auto" />,
-      title: 'Software Testing',
-      description: 'Ensuring robust application reliability through extensive unit, integration, and end-to-end testing methodologies. Identifying bugs before they hit production.',
-      features: ['Quality Assurance', 'Unit Testing', 'E2E Testing', 'Test Automation']
+      icon: <ShieldCheck className="w-12 h-12 text-[#f5d6ad]" />,
+      title: 'Simulation & Analysis',
+      description: 'Using MATLAB and simulation tools to evaluate signals, control behavior, and engineering performance before production.',
+      features: ['MATLAB', 'Signal Analysis', 'Model Testing', 'Control Design']
     },
     {
-      icon: <GraduationCap className="w-12 h-12 text-blue-600 mb-6 mx-auto" />,
-      title: 'Online Instructor',
-      description: 'Sharing practical knowledge and mentorship in web and mobile development. Empowering the next generation of developers with up-to-date industry practices.',
-      features: ['Mentorship', 'Curriculum Design', 'Code Reviews', 'Tech Workshops']
+      icon: <GraduationCap className="w-12 h-12 text-[#f5d6ad]" />,
+      title: 'Technical Training',
+      description: 'Sharing practical knowledge in electronics, embedded systems, and professional engineering workflows with learners and teams.',
+      features: ['Mentorship', 'PCB Learning', 'Microcontroller Labs', 'Technical Coaching']
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
-    }, 5000); // 5 seconds per slide
+    }, 5000);
     return () => clearInterval(timer);
   }, [services.length]);
 
@@ -51,84 +51,58 @@ const ModernServices = () => {
   const prevSlide = () => setCurrentIndex((prevIndex) => (prevIndex - 1 + services.length) % services.length);
 
   return (
-    <section id="services" className="py-24 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800">
+    <section id="services" className="section-shell py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white leading-tight">
-              Services
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#d9a66c]">Services</p>
+            <h2 className="text-4xl md:text-6xl font-black tracking-[-0.06em] mb-6 text-white leading-[0.96]">
+              Design, code, and momentum.
             </h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-[#d4d4d4] max-w-2xl mx-auto leading-relaxed">
               Comprehensive and professional solutions tailored to bring your ideas to life.
             </p>
           </div>
 
-          {/* Slideshow Container */}
-          <div className="relative max-w-4xl mx-auto">
-            {/* Nav Buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14 z-10 p-3 rounded-full bg-white dark:bg-slate-800 shadow-xl border border-gray-100 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 transition-all flex items-center justify-center"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-14 z-10 p-3 rounded-full bg-white dark:bg-slate-800 shadow-xl border border-gray-100 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 transition-all flex items-center justify-center"
-            >
-              <ChevronRight size={24} />
-            </button>
-
-            {/* Slides */}
-            <div className="overflow-hidden rounded-3xl bg-slate-50 dark:bg-slate-800 border border-gray-100 dark:border-slate-700 shadow-lg min-h-[420px] flex items-center relative">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.4 }}
-                  className="w-full px-8 py-12 md:p-16"
-                >
-                  {services[currentIndex].icon}
-                  <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white mb-6 text-center">
-                    {services[currentIndex].title}
-                  </h3>
-                  <p className="text-lg text-slate-600 dark:text-slate-400 mb-10 text-center max-w-2xl mx-auto leading-relaxed">
-                    {services[currentIndex].description}
-                  </p>
-                  
-                  {/* Features Grid */}
-                  <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
-                    {services[currentIndex].features.map((feature, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center space-x-3 bg-white dark:bg-slate-900 px-5 py-4 rounded-xl border border-gray-100 dark:border-slate-700 shadow-sm"
-                      >
-                        <div className="w-2.5 h-2.5 rounded-full bg-blue-600 flex-shrink-0" />
-                        <span className="text-sm md:text-base font-semibold text-slate-700 dark:text-slate-300">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Slide Indicators */}
-            <div className="flex justify-center space-x-3 mt-10">
-              {services.map((_, i) => (
+          <div className="service-accordion">
+            {services.map((service, index) => (
+              <div
+                key={service.title}
+                className={`service-accordion-item ${index === currentIndex ? 'active' : ''}`}
+              >
                 <button
-                  key={i}
-                  onClick={() => setCurrentIndex(i)}
-                  className={`transition-all duration-300 rounded-full h-2.5 ${
-                    i === currentIndex ? 'w-10 bg-blue-600' : 'w-2.5 bg-gray-300 dark:bg-slate-600 hover:bg-blue-400 hover:scale-110'
-                  }`}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
-            </div>
+                  type="button"
+                  onClick={() => setCurrentIndex(index)}
+                  className="service-accordion-header w-full text-left"
+                >
+                  <div className="flex items-center gap-5">
+                    <div className="service-icon-wrap">{service.icon}</div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">{service.title}</h3>
+                    </div>
+                  </div>
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-[#1a1a1a] text-2xl text-[#d9a66c]">
+                    {index === currentIndex ? '−' : '+'}
+                  </div>
+                </button>
+
+                <div className="service-accordion-body">
+                  <div className="max-w-3xl pt-2">
+                    <p className="text-lg leading-relaxed text-[#d4d4d4]">
+                      {service.description}
+                    </p>
+                    <div className="service-feature-list">
+                      {service.features.map((feature, i) => (
+                        <div key={i} className="service-feature-item">
+                          <span />
+                          <span className="font-medium">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -59,17 +59,36 @@ const ModernExperience = () => {
     const trainingTypes = ['all', ...new Set(training.map(t => t.type))];
     const certTypes = ['all', ...new Set(certifications.map(c => c.type))];
 
+    const workTypeLabels = {
+        all: 'All',
+        teaching: 'Teaching',
+        internship: 'Internship',
+        freelance: 'Freelance',
+        founder: 'Founder'
+    };
+
+    const trainingTypeLabels = {
+        all: 'All',
+        bootcamp: 'Bootcamp',
+        training: 'Training'
+    };
+
+    const certTypeLabels = {
+        all: 'All',
+        diploma: 'Diploma',
+        course: 'Course'
+    };
+
     return (
-        <section id="experience" className="py-24 bg-white dark:bg-slate-900 border-t border-b border-gray-100 dark:border-slate-800">
+        <section id="experience" className="section-shell py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto">
-                    {/* Section Header */}
                     <div className="text-center mb-20">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white leading-tight">
-                            Experience & Training
+                        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#d9a66c]">Experience & Training</p>
+                        <h2 className="text-4xl md:text-6xl font-black tracking-[-0.06em] mb-6 text-white leading-[0.96]">
+                            Progress shaped by craft.
                         </h2>
-                        <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
-                        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg text-[#d4d4d4] max-w-2xl mx-auto leading-relaxed">
                             Professional journey and continuous learning
                         </p>
                     </div>
@@ -77,23 +96,22 @@ const ModernExperience = () => {
                     {/* Work Experience Section */}
                     <div className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
-                            <Briefcase className="w-8 h-8 text-blue-600" />
-                            <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Work Experience</h3>
+                            <Briefcase className="w-8 h-8 text-[#d9a66c]" />
+                            <h3 className="text-3xl font-bold text-[#f5f5f5]">Work Experience</h3>
                         </div>
 
-                        {/* Filter Buttons */}
                         <div className="flex flex-wrap gap-3 mb-8">
                             {workTypes.map(type => (
                                 <button
                                     key={type}
                                     onClick={() => setWorkFilter(type)}
-                                    className={`px-6 py-2 rounded-full font-semibold transition-all transform hover:scale-105 ${
+                                    className={`rounded-full px-6 py-2 font-semibold transition-all hover:scale-[1.02] ${
                                         workFilter === type
-                                            ? 'bg-blue-600 text-white shadow-lg'
-                                            : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                                            ? 'bg-[#d9a66c] text-[#121212] shadow-[0_12px_30px_rgba(217,166,108,0.25)]'
+                                            : 'border border-white/10 bg-[#121212] text-[#f5f5f5] hover:border-[#d9a66c]/50 hover:text-[#f5d6ad]'
                                     }`}
                                 >
-                                    {type.charAt(0).toUpperCase() + type.slice(1)}
+                                    {type === 'all' ? 'All' : type.charAt(0).toUpperCase() + type.slice(1)}
                                 </button>
                             ))}
                         </div>
@@ -107,15 +125,15 @@ const ModernExperience = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                                    className="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 dark:border-slate-700 transition-all hover:border-blue-400 dark:hover:border-blue-500 h-full"
+                                    className="group section-panel rounded-[28px] overflow-hidden transition-all hover:border-[#d9a66c]/70 h-full"
                                 >
                                     {/* Company Image/Logo */}
-                                    <div className="relative h-40 bg-gradient-to-br from-blue-500 to-blue-600 overflow-hidden">
+                                    <div className="relative h-40 bg-[#1d1d1d] overflow-hidden">
                                         <Image
                                             src={exp.image}
                                             alt={exp.company}
                                             fill
-                                            className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                            className="object-cover grayscale group-hover:scale-110 transition-transform duration-300"
                                         />
                                         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                                     </div>
@@ -123,19 +141,19 @@ const ModernExperience = () => {
                                     {/* Content */}
                                     <div className="p-8">
                                         <div className="flex items-center justify-between mb-3">
-                                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                                            <h3 className="text-2xl font-bold text-white">
                                                 {exp.company}
                                             </h3>
-                                            <span className="text-xs font-semibold px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full">
+                                            <span className="text-xs font-semibold px-3 py-1 bg-[#d9a66c]/10 text-[#f5d6ad] rounded-full border border-[#d9a66c]/20">
                                                 {exp.duration}
                                             </span>
                                         </div>
 
-                                        <p className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-4">
+                                        <p className="text-lg font-semibold text-[#d9a66c] mb-4">
                                             {exp.role}
                                         </p>
 
-                                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                                        <p className="text-[#d4d4d4] leading-relaxed mb-6">
                                             {exp.description}
                                         </p>
 
@@ -143,8 +161,8 @@ const ModernExperience = () => {
                                         <div className="space-y-2">
                                             {exp.achievements.map((achievement, idx) => (
                                                 <div key={idx} className="flex items-center gap-2">
-                                                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                                                    <span className="text-sm text-slate-600 dark:text-slate-400">
+                                                    <CheckCircle className="w-4 h-4 text-[#d9a66c] flex-shrink-0" />
+                                                    <span className="text-sm text-[#d4d4d4]">
                                                         {achievement}
                                                     </span>
                                                 </div>
@@ -159,23 +177,22 @@ const ModernExperience = () => {
                     {/* Training Section */}
                     <div className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
-                            <Award className="w-8 h-8 text-green-600" />
-                            <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Training & Programs</h3>
+                            <Award className="w-8 h-8 text-[#d9a66c]" />
+                            <h3 className="text-3xl font-bold text-[#f5f5f5]">Training & Programs</h3>
                         </div>
 
-                        {/* Filter Buttons */}
                         <div className="flex flex-wrap gap-3 mb-8">
                             {trainingTypes.map(type => (
                                 <button
                                     key={type}
                                     onClick={() => setTrainingFilter(type)}
-                                    className={`px-6 py-2 rounded-full font-semibold transition-all transform hover:scale-105 ${
+                                    className={`rounded-full px-6 py-2 font-semibold transition-all hover:scale-[1.02] ${
                                         trainingFilter === type
-                                            ? 'bg-green-600 text-white shadow-lg'
-                                            : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                                            ? 'bg-[#d9a66c] text-[#121212] shadow-[0_12px_30px_rgba(217,166,108,0.25)]'
+                                            : 'border border-white/10 bg-[#121212] text-[#f5f5f5] hover:border-[#d9a66c]/50 hover:text-[#f5d6ad]'
                                     }`}
                                 >
-                                    {type.charAt(0).toUpperCase() + type.slice(1)}
+                                    {trainingTypeLabels[type] || type}
                                 </button>
                             ))}
                         </div>
@@ -189,34 +206,34 @@ const ModernExperience = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                                    className="group bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 dark:border-slate-700 transition-all hover:border-green-400 dark:hover:border-green-500 h-full flex flex-col"
+                                    className="group section-panel rounded-[28px] overflow-hidden transition-all hover:border-[#d9a66c]/70 h-full flex flex-col"
                                 >
                                     {/* Logo Section */}
-                                    <div className="relative h-32 bg-gradient-to-br from-green-500 to-green-600 overflow-hidden">
+                                    <div className="relative h-32 bg-[#1a1a1a] overflow-hidden">
                                         <Image
                                             src={item.logo}
                                             alt={item.program}
                                             fill
-                                            className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                            className="object-cover grayscale group-hover:scale-110 transition-transform duration-300"
                                         />
                                     </div>
 
                                     {/* Content */}
                                     <div className="p-8 flex flex-col flex-1">
-                                        <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                                        <h4 className="text-xl font-bold text-white mb-2">
                                             {item.program}
                                         </h4>
-                                        <p className="text-green-600 dark:text-green-400 font-semibold mb-3 text-sm">
+                                        <p className="text-[#d9a66c] font-semibold mb-3 text-sm">
                                             {item.title}
                                         </p>
-                                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm mb-4 flex-1">
+                                        <p className="text-[#d4d4d4] leading-relaxed text-sm mb-4 flex-1">
                                             {item.description}
                                         </p>
-                                        <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-slate-700">
-                                            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                                        <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                                            <span className="text-xs font-semibold text-[#d4d4d4]">
                                                 Duration: {item.duration}
                                             </span>
-                                            <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs rounded-full font-semibold">
+                                            <span className="px-3 py-1 bg-[#d9a66c]/10 text-[#f5d6ad] text-xs rounded-full font-semibold border border-[#d9a66c]/20">
                                                 {item.type}
                                             </span>
                                         </div>
@@ -229,23 +246,22 @@ const ModernExperience = () => {
                     {/* Certifications Section */}
                     <div className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
-                            <CheckCircle className="w-8 h-8 text-purple-600" />
-                            <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Certifications</h3>
+                            <CheckCircle className="w-8 h-8 text-[#d9a66c]" />
+                            <h3 className="text-3xl font-bold text-[#f5f5f5]">Certifications</h3>
                         </div>
 
-                        {/* Filter Buttons */}
                         <div className="flex flex-wrap gap-3 mb-8">
                             {certTypes.map(type => (
                                 <button
                                     key={type}
                                     onClick={() => setCertFilter(type)}
-                                    className={`px-6 py-2 rounded-full font-semibold transition-all transform hover:scale-105 ${
+                                    className={`rounded-full px-6 py-2 font-semibold transition-all hover:scale-[1.02] ${
                                         certFilter === type
-                                            ? 'bg-purple-600 text-white shadow-lg'
-                                            : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                                            ? 'bg-[#d9a66c] text-[#121212] shadow-[0_12px_30px_rgba(217,166,108,0.25)]'
+                                            : 'border border-white/10 bg-[#121212] text-[#f5f5f5] hover:border-[#d9a66c]/50 hover:text-[#f5d6ad]'
                                     }`}
                                 >
-                                    {type.charAt(0).toUpperCase() + type.slice(1)}
+                                    {certTypeLabels[type] || type}
                                 </button>
                             ))}
                         </div>
@@ -259,27 +275,26 @@ const ModernExperience = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                                    className="group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-2xl border border-gray-100 dark:border-slate-700 transition-all hover:border-purple-400 dark:hover:border-purple-500 h-full"
+                                    className="group relative section-panel rounded-[28px] overflow-hidden transition-all hover:border-[#d9a66c]/70 h-full"
                                 >
                                     {/* Gradient Background */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 group-hover:from-purple-500/20 group-hover:to-blue-500/20 transition-all"></div>
+                                    <div className="absolute inset-0 bg-[#111111]" />
 
-                                    {/* Certificate Badge */}
-                                    <div className="absolute top-4 right-4 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                                        <Award className="w-6 h-6 text-white" />
+                                    <div className="absolute top-4 right-4 w-12 h-12 bg-[#d9a66c] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                        <Award className="w-6 h-6 text-[#121212]" />
                                     </div>
 
                                     {/* Content */}
                                     <div className="p-8 relative z-10 flex flex-col h-full">
-                                        <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-3 pr-8">
+                                        <h4 className="text-lg font-bold text-white mb-3 pr-8">
                                             {cert.title}
                                         </h4>
 
-                                        <p className="text-purple-600 dark:text-purple-400 font-semibold mb-2">
+                                        <p className="text-[#d9a66c] font-semibold mb-2">
                                             {cert.issuer}
                                         </p>
 
-                                        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+                                        <p className="text-sm text-[#d4d4d4] mb-6">
                                             Issued: {cert.date}
                                         </p>
 
@@ -288,7 +303,7 @@ const ModernExperience = () => {
                                             {cert.skills.map((skill, idx) => (
                                                 <span
                                                     key={idx}
-                                                    className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs rounded-full font-medium"
+                                                    className="px-3 py-1 bg-[#d9a66c]/10 text-[#f5d6ad] text-xs rounded-full font-medium border border-[#d9a66c]/20"
                                                 >
                                                     {skill}
                                                 </span>
@@ -303,13 +318,12 @@ const ModernExperience = () => {
                     {/* Organizations Section */}
                     <div>
                         <div className="flex items-center gap-3 mb-8">
-                            <Building2 className="w-8 h-8 text-orange-600" />
-                            <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Organizations</h3>
+                            <Building2 className="w-8 h-8 text-[#d9a66c]" />
+                            <h3 className="text-3xl font-bold text-white">Organizations</h3>
                         </div>
 
-                        {/* Organizations Slider */}
                         <div className="relative">
-                            <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-4 px-2">
+                            <div className="flex overflow-x-auto gap-6 pb-4 px-2 hide-scrollbar">
                                 {organizations.map((org, index) => (
                                     <motion.div
                                         key={org.id}
@@ -317,7 +331,7 @@ const ModernExperience = () => {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.4, delay: index * 0.1 }}
-                                        className="group bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md hover:shadow-2xl border border-gray-100 dark:border-slate-700 transition-all hover:border-orange-400 dark:hover:border-orange-500 flex flex-col items-center text-center min-w-[200px] flex-shrink-0"
+                                        className="org-glass-card group p-6 flex flex-col items-center text-center"
                                     >
                                         <div className="relative w-full h-20 mb-4 flex items-center justify-center">
                                             <Image
@@ -325,13 +339,13 @@ const ModernExperience = () => {
                                                 alt={`${org.name} logo`}
                                                 width={64}
                                                 height={64}
-                                                className="object-contain group-hover:scale-110 transition-transform duration-300"
+                                                className="object-contain transition-transform duration-300 group-hover:scale-110"
                                             />
                                         </div>
-                                        <h4 className="font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                                        <h4 className="font-bold text-white mb-2 transition-colors group-hover:text-[#f5d6ad]">
                                             {org.name}
                                         </h4>
-                                        <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        <p className="text-xs text-[#d4d4d4] leading-relaxed">
                                             {org.description}
                                         </p>
                                     </motion.div>
@@ -340,25 +354,25 @@ const ModernExperience = () => {
                             
                             {/* Navigation Arrows */}
                             <button 
-                                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white dark:bg-slate-800 shadow-lg rounded-full p-2 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors border border-gray-200 dark:border-slate-600"
+                                className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#1a1a1a] shadow-lg rounded-full p-2 hover:bg-[#222222] transition-colors border border-white/10 text-[#f5f5f5]"
                                 onClick={() => {
                                     const container = document.querySelector('.overflow-x-auto');
                                     if (container) container.scrollLeft -= 200;
                                 }}
                             >
-                                <svg className="w-5 h-5 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                                 </svg>
                             </button>
                             
                             <button 
-                                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white dark:bg-slate-800 shadow-lg rounded-full p-2 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors border border-gray-200 dark:border-slate-600"
+                                className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#1a1a1a] shadow-lg rounded-full p-2 hover:bg-[#222222] transition-colors border border-white/10 text-[#f5f5f5]"
                                 onClick={() => {
                                     const container = document.querySelector('.overflow-x-auto');
                                     if (container) container.scrollLeft += 200;
                                 }}
                             >
-                                <svg className="w-5 h-5 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
                             </button>
@@ -368,8 +382,8 @@ const ModernExperience = () => {
                     {/* Reviews Section */}
                     <div className="mt-24">
                         <div className="flex items-center gap-3 mb-8">
-                            <Star className="w-8 h-8 text-yellow-500" />
-                            <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Client Reviews</h3>
+                            <Star className="w-8 h-8 text-[#d9a66c]" />
+                            <h3 className="text-3xl font-bold text-[#f5f5f5]">Client Reviews</h3>
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-8">
@@ -380,12 +394,12 @@ const ModernExperience = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.45, delay: index * 0.12 }}
-                                    className="group relative overflow-hidden rounded-3xl border border-gray-100 dark:border-slate-700 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 p-8 shadow-xl hover:shadow-2xl transition-all"
+                                    className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#121212] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.18)] transition-all hover:translate-y-[-2px]"
                                 >
-                                    <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-80" />
+                                    <div className="absolute inset-x-0 top-0 h-1 bg-[#d9a66c]" />
                                     <div className="relative z-10 flex h-full flex-col gap-6">
                                         <div className="space-y-4">
-                                            <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm">
+                                            <p className="text-[#d4d4d4] leading-relaxed text-sm">
                                                 “{review.quote}”
                                             </p>
                                             <div className="flex items-center gap-2">
@@ -395,10 +409,10 @@ const ModernExperience = () => {
                                             </div>
                                         </div>
                                         <div className="mt-auto pt-4 border-t border-gray-200 dark:border-slate-700">
-                                            <p className="text-base font-semibold text-slate-900 dark:text-white">
+                                            <p className="text-base font-semibold text-white">
                                                 {review.reviewer}
                                             </p>
-                                            <p className="text-sm text-slate-500 dark:text-slate-400">
+                                            <p className="text-sm text-[#d4d4d4]">
                                                 {review.title} • {review.company}
                                             </p>
                                         </div>

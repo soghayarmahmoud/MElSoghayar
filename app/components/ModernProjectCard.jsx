@@ -5,71 +5,66 @@ import Link from 'next/link';
 
 const ModernProjectCard = ({ project, index }) => {
   return (
-    <div
-      className="group relative bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-slate-700"
-    >
-      {/* Project Image */}
+    <div className="group relative overflow-hidden border border-white/10 bg-[#0f0f0f]">
       <div className="relative h-48 overflow-hidden">
         <Image
           src={project.image || '/images/b1.jpg'}
           alt={project.title}
           width={400}
           height={300}
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover grayscale transition-transform duration-300 group-hover:scale-105"
         />
 
-        {/* Status Badge */}
-        <div className="absolute top-4 right-4">
+        <div className="absolute right-4 top-4">
           {project.status === 'in-progress' ? (
-            <span className="bg-yellow-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+            <span className="rounded-full bg-[#d9a66c] px-3 py-1 text-xs font-medium text-[#121212]">
               In Progress
             </span>
           ) : project.status === 'pending' ? (
-            <span className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+            <span className="rounded-full bg-[#d5655b] px-3 py-1 text-xs font-medium text-white">
               Pending
             </span>
           ) : (
-            <span className="bg-green-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+            <span className="rounded-full bg-[#f5d6ad] px-3 py-1 text-xs font-medium text-[#121212]">
               Live
             </span>
           )}
         </div>
       </div>
 
-      {/* Content */}
       <div className="p-8">
         <div className="mb-6">
-          <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-3 leading-tight">
+          <h3 className="mb-3 text-xl font-bold leading-tight text-white">
             {project.title}
           </h3>
-          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed line-clamp-2">
+          <p className="line-clamp-2 text-sm leading-relaxed text-[#d4d4d4]">
             {project.description}
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="mb-6 flex flex-wrap gap-2">
           {project.technologies?.slice(0, 3).map((tech, techIndex) => (
             <span
               key={tech}
-              className="bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-slate-300 text-xs px-3 py-1 rounded-full font-medium border border-gray-200 dark:border-slate-600"
+              className="rounded-full border border-white/10 bg-[#171717] px-3 py-1 text-xs font-medium text-[#f5f5f5]"
             >
               {tech}
             </span>
           ))}
           {project.technologies?.length > 3 && (
-            <span className="text-xs text-slate-500 dark:text-slate-400 px-3 py-1">
+            <span className="px-3 py-1 text-xs text-[#a3a3a3]">
               +{project.technologies.length - 3} more
             </span>
           )}
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row">
           {!project.downloadApk && project.liveUrl && (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 bg-gray-800 text-white text-center py-3 px-4 rounded-lg font-medium hover:bg-gray-700 transition-all duration-200"
+              className="flex-1 rounded-full bg-[#d9a66c] px-4 py-3 text-center font-medium text-[#121212] transition-colors hover:bg-[#f5d6ad]"
             >
               Live Demo
             </a>
@@ -80,14 +75,13 @@ const ModernProjectCard = ({ project, index }) => {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 text-center py-3 px-4 rounded-lg font-medium hover:border-gray-400 dark:hover:border-slate-500 transition-all duration-200"
+              className="flex-1 rounded-full border border-white/10 bg-[#121212] px-4 py-3 text-center font-medium text-[#f5f5f5] transition-colors hover:border-[#d9a66c] hover:text-[#f5d6ad]"
             >
               GitHub
             </a>
           )}
         </div>
       </div>
-
     </div>
   );
 };

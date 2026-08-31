@@ -12,35 +12,32 @@ const ModernAbout = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-slate-50 dark:bg-slate-900 border-t border-b border-gray-100 dark:border-slate-800">
+    <section id="about" className="section-shell py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
-              About Me
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#d9a66c]">About Me</p>
+            <h2 className="text-4xl md:text-6xl font-black tracking-[-0.06em] mb-6 text-[#f5f5f5] leading-[0.96]">
+              Built for clarity, speed, and craft.
             </h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-[#d4d4d4] max-w-2xl mx-auto">
               Passionate developer dedicated to crafting exceptional digital experiences
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Text Content */}
             <div className="space-y-6">
-              <h3 className="text-3xl font-semibold mb-6 text-slate-800 dark:text-slate-100">
+              <h3 className="text-3xl md:text-4xl font-semibold mb-6 text-white">
                 Hi, I&apos;m Mahmoud 👋
               </h3>
-              <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              <p className="text-lg text-[#d4d4d4] leading-relaxed">
                 I&apos;m a passionate full-stack developer with 3+ years of experience creating innovative web and mobile solutions. I specialize in modern technologies like React, Next.js, Node.js, and Flutter, always striving to deliver exceptional user experiences and clean, maintainable code.
               </p>
-              <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              <p className="text-lg text-[#d4d4d4] leading-relaxed">
                 My approach to software engineering focuses on building scalable, professional platforms rather than just functional code. When I&apos;m not actively coding, I&apos;m constantly exploring industry trends or sharing my knowledge with aspiring developers.
               </p>
             </div>
 
-            {/* Profile Image */}
             <motion.div 
                initial={{ opacity: 0, x: 20 }}
                whileInView={{ opacity: 1, x: 0 }}
@@ -48,14 +45,14 @@ const ModernAbout = () => {
                transition={{ duration: 0.6 }}
                className="relative mx-auto w-full max-w-sm"
             >
-              <div className="w-80 h-80 mx-auto bg-blue-600 rounded-2xl shadow-xl p-1 transform transition-transform hover:scale-105 duration-300">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden">
+              <div className="section-panel w-80 h-80 mx-auto rounded-[32px] p-1 transform transition-transform hover:scale-[1.02] duration-300">
+                <div className="w-full h-full rounded-[28px] overflow-hidden bg-[#1b1b1b]">
                   <Image
                     src="/images/about.jpg"
                     alt="Profile"
                     width={320}
                     height={320}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover grayscale"
                     priority={true}
                   />
                 </div>
@@ -63,7 +60,6 @@ const ModernAbout = () => {
             </motion.div>
           </div>
 
-          {/* Stats Row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -72,12 +68,12 @@ const ModernAbout = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 key={stat.label}
-                className="bg-white dark:bg-slate-800 p-8 rounded-xl text-center border border-gray-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow"
+                className="section-panel p-8 rounded-[24px] text-center"
               >
-                <div className="text-4xl font-extrabold text-blue-600 dark:text-blue-500 mb-3">
+                <div className="text-4xl font-extrabold text-[#d9a66c] mb-3">
                   {stat.number}
                 </div>
-                <div className="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-widest">
+                <div className="text-sm font-semibold text-[#d4d4d4] uppercase tracking-[0.2em]">
                   {stat.label}
                 </div>
               </motion.div>

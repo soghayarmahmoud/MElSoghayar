@@ -24,15 +24,15 @@ const ModernProjects = () => {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="projects" className="py-24 bg-slate-50 dark:bg-slate-900 border-t border-b border-gray-100 dark:border-slate-800">
+    <section id="projects" className="section-shell py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
-              Projects
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#d9a66c]">Projects</p>
+            <h2 className="text-4xl md:text-6xl font-black tracking-[-0.06em] mb-6 text-white leading-[0.96]">
+              Selected work with depth.
             </h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-[#d4d4d4] max-w-2xl mx-auto">
               Some of my recent work showcasing modern technologies
             </p>
 
@@ -41,9 +41,9 @@ const ModernProjects = () => {
                 <button
                   key={filter.key}
                   onClick={() => setActiveFilter(filter.key)}
-                  className={`px-8 py-3 rounded-lg font-medium text-base transition-all duration-200 ${activeFilter === filter.key
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-700'
+                  className={`px-8 py-3 rounded-full font-medium text-base transition-all duration-200 ${activeFilter === filter.key
+                    ? 'bg-[#d9a66c] text-[#121212] shadow-md'
+                    : 'bg-[#1a1a1a] text-[#f5f5f5] hover:bg-[#222222] border border-white/10'
                     }`}
                 >
                   <span>{filter.label}</span>
@@ -52,16 +52,13 @@ const ModernProjects = () => {
             </div>
           </div>
 
-
           <AdsenseAd adSlot="1234567890" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {filteredProjects.map((project, index) => (
-              <ModernProjectCard
-                key={project.id}
-                project={project}
-                index={index}
-              />
+              <div key={project.id} className="h-full">
+                <ModernProjectCard project={project} index={index} />
+              </div>
             ))}
           </div>
 

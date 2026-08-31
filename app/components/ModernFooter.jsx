@@ -25,26 +25,24 @@ const ModernFooter = () => {
   ];
 
   return (
-    <footer className="bg-slate-900 dark:bg-slate-950 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand Section */}
+    <footer className="bg-[#0a0a0a] text-white">
+      <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-12 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">ME</span>
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#d9a66c] text-lg font-bold text-[#121212]">
+                  ME
                 </div>
-                <h3 className="text-3xl font-bold text-blue-400">
+                <h3 className="text-3xl font-bold text-[#f5f5f5]">
                   El Soghayar
                 </h3>
               </div>
-              <p className="text-slate-400 text-lg leading-relaxed max-w-md">
+              <p className="max-w-md text-lg leading-relaxed text-[#d4d4d4]">
                 Passionate full-stack developer creating innovative web solutions with modern technologies.
               </p>
             </div>
 
-            {/* Social Links */}
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
@@ -52,7 +50,7 @@ const ModernFooter = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
+                  className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-[#141414] text-[#f5f5f5] transition-colors hover:bg-[#d9a66c] hover:text-[#121212]"
                   title={social.name}
                 >
                   {social.icon}
@@ -61,15 +59,14 @@ const ModernFooter = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-bold mb-6 text-blue-400">Quick Links</h4>
+            <h4 className="mb-6 text-xl font-bold text-[#d9a66c]">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors"
+                    className="text-[#d4d4d4] transition-colors hover:text-[#f5d6ad]"
                   >
                     {link.name}
                   </a>
@@ -78,46 +75,43 @@ const ModernFooter = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
-            <h4 className="text-xl font-bold mb-6 text-blue-400">Get in Touch</h4>
+            <h4 className="mb-6 text-xl font-bold text-[#d9a66c]">Get in Touch</h4>
             <div className="space-y-4">
               <div>
-                <p className="text-slate-500 text-sm font-semibold mb-1">Email</p>
-                <a href="mailto:mahmoudsruby@gmail.com" className="text-white hover:text-blue-400 transition-colors">
+                <p className="mb-1 text-sm font-semibold text-[#a3a3a3]">Email</p>
+                <a href="mailto:mahmoudsruby@gmail.com" className="text-white transition-colors hover:text-[#f5d6ad]">
                   mahmoudsruby@gmail.com
                 </a>
               </div>
               <div>
-                <p className="text-slate-500 text-sm font-semibold mb-1">Phone</p>
-                <a href="https://wa.me/201019593092" className="text-white hover:text-blue-400 transition-colors">
+                <p className="mb-1 text-sm font-semibold text-[#a3a3a3]">Phone</p>
+                <a href="https://wa.me/201019593092" className="text-white transition-colors hover:text-[#f5d6ad]">
                   +20 101 959 3092
                 </a>
               </div>
               <div>
-                <p className="text-slate-500 text-sm font-semibold mb-1">Location</p>
+                <p className="mb-1 text-sm font-semibold text-[#a3a3a3]">Location</p>
                 <p className="text-white">Luxor, Egypt</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-slate-400 text-sm">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <div className="text-sm text-[#a3a3a3]">
             © 2026 Mahmoud El Soghayar. All rights reserved.
           </div>
 
-          <div className="flex items-center space-x-2 text-slate-400 text-sm">
-            Made with <Heart size={16} className="text-red-500 mx-1" /> by Mahmoud El Soghayar
+          <div className="flex items-center space-x-2 text-sm text-[#a3a3a3]">
+            Made with <Heart size={16} className="mx-1 text-[#d5655b]" /> by Mahmoud El Soghayar
           </div>
         </div>
       </div>
 
-      {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center shadow-lg transition-colors"
+        className="fixed bottom-8 right-8 flex h-12 w-12 items-center justify-center rounded-full bg-[#d9a66c] text-[#121212] shadow-[0_15px_40px_rgba(217,166,108,0.25)] transition-colors hover:bg-[#f5d6ad]"
       >
         <ArrowUp size={24} />
       </button>

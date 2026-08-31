@@ -78,16 +78,15 @@ const ModernReviews = () => {
   ];
 
   return (
-    <section id="reviews" className="py-24 bg-slate-50 dark:bg-slate-800">
+    <section id="reviews" className="py-24 bg-[#111111]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
               Share Your Experience
             </h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            <div className="mx-auto mb-8 h-1 w-20 bg-[#d9a66c]"></div>
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-[#d4d4d4]">
               Have you worked with me on a freelancing platform? Share your honest review and help others make informed decisions.
             </p>
           </div>
@@ -98,17 +97,17 @@ const ModernReviews = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-slate-700"
+              className="rounded-[28px] border border-white/10 bg-[#121212] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.18)]"
             >
-              <div className="flex items-center gap-3 mb-8">
-                <MessageSquare className="w-8 h-8 text-blue-600" />
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Submit a Review</h3>
+              <div className="mb-8 flex items-center gap-3">
+                <MessageSquare className="h-8 w-8 text-[#d9a66c]" />
+                <h3 className="text-2xl font-bold text-white">Submit a Review</h3>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                  <label htmlFor="name" className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
                     Your Name *
                   </label>
                   <input
@@ -118,14 +117,14 @@ const ModernReviews = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                    className="w-full rounded-lg border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] transition-colors focus:border-[#d9a66c] focus:outline-none"
                     placeholder="Enter your full name"
                   />
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                  <label htmlFor="email" className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
                     Email Address *
                   </label>
                   <input
@@ -135,14 +134,14 @@ const ModernReviews = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                    className="w-full rounded-lg border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] transition-colors focus:border-[#d9a66c] focus:outline-none"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
                 {/* Platform */}
                 <div>
-                  <label htmlFor="platform" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                  <label htmlFor="platform" className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
                     Platform *
                   </label>
                   <select
@@ -151,7 +150,7 @@ const ModernReviews = () => {
                     value={formData.platform}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                    className="w-full rounded-lg border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] transition-colors focus:border-[#d9a66c] focus:outline-none"
                   >
                     <option value="">Select a platform</option>
                     {platforms.map(platform => (
@@ -162,7 +161,7 @@ const ModernReviews = () => {
 
                 {/* Rating */}
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                  <label className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
                     Rating *
                   </label>
                   <div className="flex gap-2">
@@ -187,7 +186,7 @@ const ModernReviews = () => {
 
                 {/* Review */}
                 <div>
-                  <label htmlFor="review" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
+                  <label htmlFor="review" className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
                     Your Review *
                   </label>
                   <textarea
@@ -197,7 +196,7 @@ const ModernReviews = () => {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+                    className="w-full resize-none rounded-lg border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] transition-colors focus:border-[#d9a66c] focus:outline-none"
                     placeholder="Share your experience working with me..."
                   />
                 </div>
@@ -206,7 +205,7 @@ const ModernReviews = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#d9a66c] px-6 py-3 font-semibold text-[#121212] transition-colors hover:bg-[#f5d6ad] disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <>
@@ -262,31 +261,31 @@ const ModernReviews = () => {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-8 border border-blue-100 dark:border-blue-800">
-                <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="rounded-[26px] border border-[#d9a66c]/20 bg-[#121212] p-8">
+                <h4 className="mb-4 text-xl font-bold text-white">
                   Why Share Your Review?
                 </h4>
-                <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+                <ul className="space-y-3 text-[#d4d4d4]">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#d9a66c]" />
                     <span>Help other clients make informed decisions</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#d9a66c]" />
                     <span>Contribute to building trust in the freelancing community</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#d9a66c]" />
                     <span>Your feedback helps improve service quality</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-8 border border-green-100 dark:border-green-800">
-                <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+              <div className="rounded-[26px] border border-white/10 bg-[#121212] p-8">
+                <h4 className="mb-4 text-xl font-bold text-white">
                   Review Guidelines
                 </h4>
-                <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-sm">
+                <ul className="space-y-3 text-sm text-[#d4d4d4]">
                   <li>• Be honest and specific about your experience</li>
                   <li>• Mention the platform where we worked together</li>
                   <li>• Focus on communication, quality, and timeliness</li>
