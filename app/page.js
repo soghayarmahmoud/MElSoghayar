@@ -19,7 +19,7 @@ export default function HomePage() {
       <ModernExperience />
       <ModernServices />
       <ModernProjects />
-      <ModernReviews />
+      {/* <ModernReviews /> */}
       <ModernContact />
       <ModernFooter />
     </>

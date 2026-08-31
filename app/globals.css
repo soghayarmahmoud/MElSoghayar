@@ -43,17 +43,32 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Simple blue selection */
+@keyframes liquidShimmer {
+  0% {
+    transform: translateX(-140%) skewX(-18deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(180%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
 ::selection {
   background-color: #2563eb;
-  color: white
+  color: white;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Simple scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -71,9 +86,8 @@ html {
   background: #1e40af;
 }
 
-/* Minimal transitions */
 * {
-  transition-property: color, background-color, border-color, opacity;
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
   transition-timing-function: ease-in-out;
   transition-duration: 200ms;
 }
@@ -145,6 +159,85 @@ html {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+.glass-header-shell {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+}
+
+.glass-header-shell::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.06), rgba(59, 130, 246, 0.06));
+  pointer-events: none;
+}
+
+.glass-header-shell::after {
+  content: "";
+  position: absolute;
+  top: -36%;
+  right: -10%;
+  width: 46%;
+  height: 200%;
+  background: linear-gradient(110deg, transparent 18%, rgba(255, 255, 255, 0.86) 48%, rgba(255, 255, 255, 0.08) 62%, transparent 72%);
+  filter: blur(10px);
+  opacity: 0.7;
+  animation: liquidShimmer 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.glass-header-shell.is-scrolled {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.46);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  border-color: rgba(96, 165, 250, 0.26);
+}
+
+.dark .glass-header-shell {
+  background: rgba(15, 23, 42, 0.45);
+  border-color: rgba(148, 163, 184, 0.2);
+  box-shadow: 0 22px 70px rgba(2, 6, 23, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.dark .glass-header-shell::before {
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.13), rgba(15, 23, 42, 0.12), rgba(59, 130, 246, 0.08));
+}
+
+.dark .glass-header-shell.is-scrolled {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(96, 165, 250, 0.28);
+  box-shadow: 0 26px 80px rgba(2, 6, 23, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.header-link {
+  position: relative;
+}
+
+.header-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.18), rgba(125, 211, 252, 0.08));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.header-link:hover::before {
+  opacity: 1;
+}
+
+.header-link:hover {
+  transform: translateY(-1px);
 }
 
 @layer base {
