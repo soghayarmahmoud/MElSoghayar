@@ -1,40 +1,13 @@
 export default function sitemap() {
   return [
     {
+      // Single-page portfolio — only the root URL is a real indexable page.
+      // Hash fragment URLs (/#projects, /#experience, etc.) are not separate
+      // indexable pages and should not be listed in sitemaps.
       url: 'https://elsoghayar.dev',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
-    },
-    {
-      url: 'https://elsoghayar.dev/#experience',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://elsoghayar.dev/#services',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://elsoghayar.dev/#projects',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://elsoghayar.dev/#reviews',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://elsoghayar.dev/#contact',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
+    }
   ];
 }

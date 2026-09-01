@@ -39,7 +39,7 @@ const ModernFooter = () => {
                 </h3>
               </div>
               <p className="max-w-md text-lg leading-relaxed text-[#d4d4d4]">
-                Passionate full-stack developer creating innovative web solutions with modern technologies.
+                Software & Embedded Systems Engineer building web, mobile, and connected hardware systems.
               </p>
             </div>
 
@@ -50,8 +50,8 @@ const ModernFooter = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Visit Mahmoud El Soghayar on ${social.name}`}
                   className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-[#141414] text-[#f5f5f5] transition-colors hover:bg-[#d9a66c] hover:text-[#121212]"
-                  title={social.name}
                 >
                   {social.icon}
                 </a>

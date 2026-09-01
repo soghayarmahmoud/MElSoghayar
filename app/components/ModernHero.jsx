@@ -41,15 +41,15 @@ const ModernHero = () => {
               >
                 <TypeAnimation
                   sequence={[
-                    'Embedded Systems Engineer',
+                    'Software & Embedded Systems Engineer',
                     2000,
-                    'PCB Design Specialist',
+                    'Full-Stack Developer',
                     2000,
-                    'Microcontroller Developer',
+                    'Flutter & Mobile Developer',
                     2000,
-                    'MATLAB & Electronics Engineer',
+                    'Electronics & PCB Engineer',
                     2000,
-                    'Instructor & Problem Solver',
+                    'Technical Trainer',
                     2000,
                   ]}
                   wrapper="span"
@@ -64,7 +64,7 @@ const ModernHero = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="mb-12 text-lg leading-relaxed text-[#d4d4d4] md:text-xl"
               >
-                Passionate about designing efficient electronic systems, embedded solutions, and modern technical experiences.
+                I build web and mobile software, and I design embedded systems that connect code with real-world hardware.
               </motion.p>
 
               <motion.div
@@ -74,22 +74,19 @@ const ModernHero = () => {
                 className="flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
               >
                 <a
-                  href="/documents/Mahmoud_El-Soghayar_CV_EN.pdf"
-                  download
+                  href="#projects"
                   className="flex items-center space-x-2 rounded-full bg-[#d9a66c] px-6 py-3 text-base font-semibold text-[#121212] shadow-[0_15px_40px_rgba(217,166,108,0.25)] transition-colors hover:bg-[#f5d6ad]"
                 >
-                  <Download size={20} />
-                  <span>Download CV</span>
+                  <span>View My Work</span>
                 </a>
 
                 <a
-                  href="https://wa.me/201019593092"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/documents/Mahmoud_El-Soghayar_CV_EN.pdf"
+                  download
                   className="flex items-center space-x-2 rounded-full border border-white/10 bg-[#121212] px-6 py-3 text-base font-semibold text-[#f5f5f5] transition-colors hover:border-[#d9a66c] hover:text-[#f5d6ad]"
                 >
-                  <MessageCircle size={20} />
-                  <span>Hire Me</span>
+                  <Download size={20} />
+                  <span>Download CV</span>
                 </a>
               </motion.div>
             </div>
@@ -104,7 +101,7 @@ const ModernHero = () => {
                 <div className="relative h-64 w-64 overflow-hidden rounded-full border border-white/10 bg-[#121212] shadow-[0_30px_70px_rgba(0,0,0,0.3)] md:h-80 md:w-80 lg:h-96 lg:w-96">
                   <Image
                     src="/images/n.jpg"
-                    alt="Mahmoud El Soghayar"
+                    alt="Mahmoud El Soghayar — Software & Embedded Systems Engineer"
                     fill
                     sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
                     className="object-cover grayscale"

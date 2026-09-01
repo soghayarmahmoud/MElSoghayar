@@ -18,27 +18,13 @@ const ModernExperience = () => {
     const reviews = [
         {
             id: 1,
-            quote: 'Exceptional freelancer with deep expertise in both web and mobile development. Their attention to detail and ability to deliver complex projects on time is remarkable. Highly recommend for any tech project.',
-            reviewer: 'Ahmed Hassan',
-            title: 'Tech Entrepreneur',
-            company: 'Independent Client',
-            rating: 5
-        },
-        {
-            id: 2,
-            quote: 'Outstanding professional who consistently exceeds expectations. Their freelancing approach combines technical excellence with great communication. A true expert in modern web technologies.',
-            reviewer: 'Fatima Al-Zahra',
-            title: 'Project Manager',
-            company: 'Digital Agency',
-            rating: 5
-        },
-        {
-            id: 3,
-            quote: 'Reliable and skilled developer who brings creativity and precision to every project. Their freelancing experience across multiple platforms shows their versatility and commitment to quality.',
-            reviewer: 'Omar Khalid',
-            title: 'Startup Founder',
-            company: 'Tech Startup',
-            rating: 5
+            quote: 'Really great to work with. Fast, responsive, and did exactly what was instructed with clear documentation.',
+            reviewer: 'ivy_zha',
+            title: 'Verified Client',
+            company: 'Fiverr — Software Testing',
+            rating: 5,
+            country: 'United States',
+            serviceContext: 'Software Testing · $50 · 3 days'
         }
     ];
 
@@ -376,31 +362,31 @@ const ModernExperience = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
                             </button>
-                        </div>
+                         </div>
                     </div>
 
-                    {/* Reviews Section */}
+                    {/* Client Review Section */}
                     <div className="mt-24">
                         <div className="flex items-center gap-3 mb-8">
                             <Star className="w-8 h-8 text-[#d9a66c]" />
-                            <h3 className="text-3xl font-bold text-[#f5f5f5]">Client Reviews</h3>
+                            <h3 className="text-3xl font-bold text-[#f5f5f5]">Client Review</h3>
                         </div>
 
-                        <div className="grid md:grid-cols-3 gap-8">
+                        <div className="max-w-xl">
                             {reviews.map((review, index) => (
                                 <motion.div
                                     key={review.id}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ duration: 0.45, delay: index * 0.12 }}
+                                    transition={{ duration: 0.45 }}
                                     className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#121212] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.18)] transition-all hover:translate-y-[-2px]"
                                 >
                                     <div className="absolute inset-x-0 top-0 h-1 bg-[#d9a66c]" />
                                     <div className="relative z-10 flex h-full flex-col gap-6">
                                         <div className="space-y-4">
                                             <p className="text-[#d4d4d4] leading-relaxed text-sm">
-                                                “{review.quote}”
+                                                &ldquo;{review.quote}&rdquo;
                                             </p>
                                             <div className="flex items-center gap-2">
                                                 {Array.from({ length: review.rating }).map((_, idx) => (
@@ -408,13 +394,18 @@ const ModernExperience = () => {
                                                 ))}
                                             </div>
                                         </div>
-                                        <div className="mt-auto pt-4 border-t border-gray-200 dark:border-slate-700">
+                                        <div className="mt-auto pt-4 border-t border-white/10">
                                             <p className="text-base font-semibold text-white">
                                                 {review.reviewer}
                                             </p>
-                                            <p className="text-sm text-[#d4d4d4]">
-                                                {review.title} • {review.company}
+                                            <p className="text-sm text-[#d9a66c] font-medium">
+                                                {review.company}
                                             </p>
+                                            {review.serviceContext && (
+                                                <p className="text-xs text-[#a3a3a3] mt-1">
+                                                    {review.serviceContext} · {review.country}
+                                                </p>
+                                            )}
                                         </div>
                                     </div>
                                 </motion.div>

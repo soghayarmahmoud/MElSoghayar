@@ -7,8 +7,7 @@ const ModernAbout = () => {
   const stats = [
     { number: '3+', label: 'Years Experience' },
     { number: '20+', label: 'Projects Completed' },
-    { number: '10+', label: 'Happy Clients' },
-    { number: '100%', label: 'Dedication' }
+    { number: '7', label: 'Deployed Apps' },
   ];
 
   return (
@@ -18,10 +17,10 @@ const ModernAbout = () => {
           <div className="text-center mb-16">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#d9a66c]">About Me</p>
             <h2 className="text-4xl md:text-6xl font-black tracking-[-0.06em] mb-6 text-[#f5f5f5] leading-[0.96]">
-              Built for clarity, speed, and craft.
+              Software meets hardware.
             </h2>
             <p className="text-lg md:text-xl text-[#d4d4d4] max-w-2xl mx-auto">
-              Passionate developer dedicated to crafting exceptional digital experiences
+              Engineering student with hands-on experience across the full stack — from web and mobile to embedded systems and electronics.
             </p>
           </div>
 
@@ -31,10 +30,10 @@ const ModernAbout = () => {
                 Hi, I&apos;m Mahmoud 👋
               </h3>
               <p className="text-lg text-[#d4d4d4] leading-relaxed">
-                I&apos;m a passionate full-stack developer with 3+ years of experience creating innovative web and mobile solutions. I specialize in modern technologies like React, Next.js, Node.js, and Flutter, always striving to deliver exceptional user experiences and clean, maintainable code.
+                I&apos;m an Electrical & Electronics Engineering student who builds software. My work spans web development with React and Next.js, cross-platform mobile apps with Flutter, and embedded systems with microcontrollers and PCB design.
               </p>
               <p className="text-lg text-[#d4d4d4] leading-relaxed">
-                My approach to software engineering focuses on building scalable, professional platforms rather than just functional code. When I&apos;m not actively coding, I&apos;m constantly exploring industry trends or sharing my knowledge with aspiring developers.
+                What distinguishes my work is the ability to operate across both layers — writing firmware for a microcontroller and building the web interface that talks to it, or designing a PCB and writing the software that runs on it. I work on real projects, not just exercises, and I train other developers in the process.
               </p>
             </div>
 
@@ -49,7 +48,7 @@ const ModernAbout = () => {
                 <div className="w-full h-full rounded-[28px] overflow-hidden bg-[#1b1b1b]">
                   <Image
                     src="/images/about.jpg"
-                    alt="Profile"
+                    alt="Mahmoud El Soghayar — Software & Embedded Systems Engineer"
                     width={320}
                     height={320}
                     className="w-full h-full object-cover grayscale"
@@ -60,7 +59,7 @@ const ModernAbout = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-3 gap-6">
             {stats.map((stat, i) => (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

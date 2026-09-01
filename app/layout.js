@@ -14,33 +14,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Mahmoud El Soghayar - Professional Freelance Web & Mobile Developer | React, Next.js, Flutter Expert",
-  description: "Top-rated freelance web and mobile developer specializing in React, Next.js, Flutter, and full-stack development. Available on Upwork, Fiverr, Freelancer, Mostaql, and Nafezly. 5-star reviews, 20+ successful projects. Get professional web development services today.",
+  title: "Mahmoud El Soghayar | Software & Embedded Systems Engineer",
+  description: "Mahmoud El Soghayar is a Software & Embedded Systems Engineer building web applications, cross-platform mobile apps, and embedded hardware systems. Based in Luxor, Egypt.",
   keywords: [
-    "freelance web developer",
-    "freelance mobile developer",
+    "Mahmoud El Soghayar",
+    "software engineer",
+    "embedded systems engineer",
+    "web developer",
+    "mobile developer",
+    "Flutter developer",
     "React developer",
     "Next.js developer",
-    "Flutter developer",
-    "full stack developer",
-    "Upwork freelancer",
-    "Fiverr freelancer",
-    "Freelancer.com expert",
-    "Mostaql developer",
-    "Nafezly developer",
-    "web development services",
-    "mobile app development",
-    "frontend developer",
-    "backend developer",
-    "JavaScript developer",
-    "TypeScript developer",
-    "Node.js developer",
-    "MERN stack developer",
-    "Egypt freelance developer",
-    "remote web developer",
-    "professional freelancer",
-    "tech freelancer",
-    "software developer for hire"
+    "full-stack developer",
+    "PCB design",
+    "Arduino",
+    "ESP32",
+    "electronics engineer",
+    "Egypt developer",
+    "freelance developer"
   ],
   authors: [{ name: "Mahmoud El Soghayar" }],
   creator: "Mahmoud El Soghayar",
@@ -55,16 +46,17 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Mahmoud El Soghayar - Professional Freelance Web & Mobile Developer",
-    description: "Top-rated freelance developer on Upwork, Fiverr, Freelancer. Expert in React, Next.js, Flutter. 20+ projects, 5-star reviews. Hire me for your next project!",
+    title: "Mahmoud El Soghayar | Software & Embedded Systems Engineer",
+    description: "Software & Embedded Systems Engineer building web, mobile, and connected hardware systems. Flutter, React, Next.js, Arduino, ESP32.",
     url: "https://elsoghayar.dev",
-    siteName: "Mahmoud El Soghayar Portfolio",
+    siteName: "Mahmoud El Soghayar",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Mahmoud El Soghayar - Freelance Web & Mobile Developer",
+        // TODO: Replace /images/og-image.jpg with an actual OG image asset
+        alt: "Mahmoud El Soghayar — Software & Embedded Systems Engineer",
       },
     ],
     locale: "en_US",
@@ -72,8 +64,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mahmoud El Soghayar - Freelance Web & Mobile Developer",
-    description: "Top-rated freelance developer specializing in React, Next.js, Flutter. Available on all major platforms. 5-star reviews, professional service.",
+    title: "Mahmoud El Soghayar | Software & Embedded Systems Engineer",
+    description: "Software & Embedded Systems Engineer building web, mobile, and connected hardware systems.",
+    // TODO: Replace /images/twitter-image.jpg with an actual Twitter card image asset
     images: ["/images/twitter-image.jpg"],
     creator: "@mahmoudsruby",
   },
@@ -88,6 +81,7 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  // TODO: Replace placeholder verification codes with real values from Google Search Console, Bing Webmaster Tools, etc.
   verification: {
     google: "your-google-verification-code",
     yandex: "your-yandex-verification-code",
@@ -100,15 +94,14 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Mahmoud El Soghayar",
-    "jobTitle": "Freelance Web & Mobile Developer",
-    "description": "Professional freelance developer specializing in React, Next.js, Flutter, and full-stack development",
+    "jobTitle": "Software & Embedded Systems Engineer",
+    "description": "Software & Embedded Systems Engineer building web applications, cross-platform mobile apps, and embedded hardware systems.",
     "url": "https://elsoghayar.dev",
     "sameAs": [
-      "https://www.upwork.com/freelancers/mahmoudsruby",
+      "https://github.com/soghayarmahmoud",
+      "https://linkedin.com/in/elsoghayar",
       "https://www.fiverr.com/mahmoudsruby",
-      "https://www.freelancer.com/u/mahmoudsruby",
-      "https://mostaql.com/u/mahmoudsruby",
-      "https://nafezly.com/mahmoudsruby"
+      "https://mostaql.com/u/mahmoudsruby"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -116,31 +109,22 @@ export default function RootLayout({ children }) {
       "addressCountry": "Egypt"
     },
     "knowsAbout": [
+      "Web Development",
+      "Mobile Development",
+      "Flutter",
       "React",
       "Next.js",
-      "Flutter",
       "JavaScript",
       "TypeScript",
       "Node.js",
-      "MongoDB",
-      "Web Development",
-      "Mobile Development",
-      "Full Stack Development"
-    ],
-    "hasOccupation": {
-      "@type": "Occupation",
-      "name": "Freelance Developer",
-      "occupationLocation": {
-        "@type": "City",
-        "name": "Luxor",
-        "addressCountry": "EG"
-      }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "20"
-    }
+      "Embedded Systems",
+      "Microcontrollers",
+      "PCB Design",
+      "Electronics",
+      "Arduino",
+      "ESP32",
+      "Software Testing"
+    ]
   };
 
   return (
@@ -157,7 +141,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
 
-        {/* Structured Data */}
+        {/* Structured Data — Person schema */}
         <Script
           id="structured-data"
           type="application/ld+json"

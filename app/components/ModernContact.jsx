@@ -108,10 +108,10 @@ const ModernContact = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="mb-4 text-2xl font-semibold text-white">
-                  Let&apos;s Build Something Amazing
+                  Have a project or opportunity in mind?
                 </h3>
                 <p className="text-lg leading-relaxed text-[#d4d4d4]">
-                  I&apos;m always open to discussing new opportunities, creative projects, or potential collaborations.
+                  Whether it&apos;s a web app, mobile project, embedded system, or a technical challenge — reach out and let&apos;s talk through it.
                 </p>
               </div>
 
@@ -142,11 +142,12 @@ const ModernContact = () => {
               <form onSubmit={handleSubmit} className="space-y-6 rounded-[30px] border border-white/10 bg-[#121212] p-8 shadow-[0_24px_70px_rgba(0,0,0,0.25)]">
                 <div className="grid gap-6 md:grid-cols-2">
                   <div>
-                    <label className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
+                    <label htmlFor="name" className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
                       Your Name
                     </label>
                     <input
                       type="text"
+                      id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
@@ -157,11 +158,12 @@ const ModernContact = () => {
                   </div>
 
                   <div>
-                    <label className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
+                    <label htmlFor="email" className="mb-2 block text-sm font-semibold text-[#f5f5f5]">
                       Your Email
                     </label>
                     <input
                       type="email"
+                      id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}

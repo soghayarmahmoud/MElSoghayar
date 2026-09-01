@@ -10,33 +10,33 @@ const ModernServices = () => {
   const services = [
     {
       icon: <Monitor className="w-12 h-12 text-[#f5d6ad]" />,
-      title: 'Front End Development',
-      description: 'Building modern, responsive, and pixel-perfect user interfaces using React, Next.js, and advanced CSS frameworks. Focused on excellent UX and accessibility.',
-      features: ['React & Next.js', 'Tailwind CSS', 'Responsive Design', 'Web Animation']
+      title: 'Web Development',
+      description: 'Responsive web applications and interfaces built with React and Next.js. Covers frontend UI, server-side rendering, API integration, and deployment.',
+      features: ['React & Next.js', 'Tailwind CSS', 'Responsive Design', 'API Integration']
     },
     {
       icon: <Layers className="w-12 h-12 text-[#f5d6ad]" />,
-      title: 'Embedded Systems Design',
-      description: 'Designing robust electronic systems and hardware-aware firmware for sensing, control, automation, and smart-device applications.',
-      features: ['PCB Design', 'Microcontroller', 'Firmware Logic', 'System Integration']
+      title: 'Embedded Systems',
+      description: 'Microcontroller-based systems for sensing, control, and automation. Covers firmware development, hardware-software integration, and device communication protocols.',
+      features: ['Arduino & ESP32', 'Firmware Development', 'Sensor Integration', 'Hardware-Software Bridge']
     },
     {
       icon: <Smartphone className="w-12 h-12 text-[#f5d6ad]" />,
-      title: 'Electronics Prototyping',
-      description: 'Developing practical proof-of-concept electronics with reliable layouts, testing workflows, and performance validation for engineering projects.',
-      features: ['Arduino', 'Sensors', 'Circuit Debugging', 'Hardware Testing']
+      title: 'Mobile Development',
+      description: 'Cross-platform mobile applications built with Flutter. Covers UI development, Firebase integration, local storage, authentication, and APK delivery.',
+      features: ['Flutter & Dart', 'Firebase Backend', 'Cross-Platform', 'App Store Ready']
     },
     {
       icon: <ShieldCheck className="w-12 h-12 text-[#f5d6ad]" />,
-      title: 'Simulation & Analysis',
-      description: 'Using MATLAB and simulation tools to evaluate signals, control behavior, and engineering performance before production.',
-      features: ['MATLAB', 'Signal Analysis', 'Model Testing', 'Control Design']
+      title: 'Electronics & PCB Design',
+      description: 'Electronic circuit design and PCB development for embedded and hardware projects. From schematic design in KiCad to board layout, review, and prototyping.',
+      features: ['KiCad', 'Schematic Design', 'PCB Layout', 'Hardware Prototyping']
     },
     {
       icon: <GraduationCap className="w-12 h-12 text-[#f5d6ad]" />,
       title: 'Technical Training',
-      description: 'Sharing practical knowledge in electronics, embedded systems, and professional engineering workflows with learners and teams.',
-      features: ['Mentorship', 'PCB Learning', 'Microcontroller Labs', 'Technical Coaching']
+      description: 'Practical training in web development, mobile development, and software engineering fundamentals. Curriculum-based instruction with code reviews and project-based learning.',
+      features: ['Web Development', 'Mobile Dev', 'Code Reviews', 'Project-Based Learning']
     }
   ];
 
@@ -60,7 +60,7 @@ const ModernServices = () => {
               Design, code, and momentum.
             </h2>
             <p className="text-lg text-[#d4d4d4] max-w-2xl mx-auto leading-relaxed">
-              Comprehensive and professional solutions tailored to bring your ideas to life.
+              Covering the full range — from web and mobile software to embedded hardware.
             </p>
           </div>
 
@@ -74,6 +74,7 @@ const ModernServices = () => {
                   type="button"
                   onClick={() => setCurrentIndex(index)}
                   className="service-accordion-header w-full text-left"
+                  aria-expanded={index === currentIndex}
                 >
                   <div className="flex items-center gap-5">
                     <div className="service-icon-wrap">{service.icon}</div>
