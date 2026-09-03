@@ -87,16 +87,16 @@ const ModernServices = () => {
                   </div>
                 </button>
 
-                <div className="service-accordion-body">
-                  <div className="max-w-3xl pt-2">
-                    <p className="text-lg leading-relaxed text-[#d4d4d4]">
+                <div className="service-accordion-body ">
+                  <div className="max-w-3xl pt-4 ">
+                    <p className="text-lg leading-relaxed text-[#d4d4d4] ">
                       {service.description}
                     </p>
                     <div className="service-feature-list">
                       {service.features.map((feature, i) => (
-                        <div key={i} className="service-feature-item">
+                        <div key={i} className="service-feature-item ">
                           <span />
-                          <span className="font-medium">{feature}</span>
+                          <p className="font-small font-bold  ">{feature}</p>
                         </div>
                       ))}
                     </div>
