@@ -6,6 +6,7 @@ import ModernAbout from "./components/ModernAbout";
 import ModernExperience from "./components/ModernExperience";
 import ModernServices from "./components/ModernServices";
 import ModernProjects from "./components/ModernProjects";
+import CertificatesGallery from "./components/CertificatesGallery";
 import ModernReviews from "./components/ModernReviews";
 import ModernContact from "./components/ModernContact";
 import ModernFooter from "./components/ModernFooter";
@@ -19,7 +20,7 @@ export default function HomePage() {
       <ModernExperience />
       <ModernServices />
       <ModernProjects />
-      {/* <ModernReviews /> */}
+      <CertificatesGallery />
       <ModernContact />
       <ModernFooter />
     </>

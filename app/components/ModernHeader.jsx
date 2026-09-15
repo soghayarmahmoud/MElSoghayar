@@ -23,6 +23,7 @@ const ModernHeader = () => {
     { name: 'Experience', href: '#experience' },
     { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Certificates', href: '#certificates' },
     { name: 'Contact', href: '#contact' }
   ];
 

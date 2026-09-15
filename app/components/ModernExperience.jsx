@@ -229,77 +229,7 @@ const ModernExperience = () => {
                         </div>
                     </div>
 
-                    {/* Certifications Section */}
-                    <div className="mb-24">
-                        <div className="flex items-center gap-3 mb-8">
-                            <CheckCircle className="w-8 h-8 text-[#d9a66c]" />
-                            <h3 className="text-3xl font-bold text-[#f5f5f5]">Certifications</h3>
-                        </div>
 
-                        <div className="flex flex-wrap gap-3 mb-8">
-                            {certTypes.map(type => (
-                                <button
-                                    key={type}
-                                    onClick={() => setCertFilter(type)}
-                                    className={`rounded-full px-6 py-2 font-semibold transition-all hover:scale-[1.02] ${
-                                        certFilter === type
-                                            ? 'bg-[#d9a66c] text-[#121212] shadow-[0_12px_30px_rgba(217,166,108,0.25)]'
-                                            : 'border border-white/10 bg-[#121212] text-[#f5f5f5] hover:border-[#d9a66c]/50 hover:text-[#f5d6ad]'
-                                    }`}
-                                >
-                                    {certTypeLabels[type] || type}
-                                </button>
-                            ))}
-                        </div>
-
-                        {/* Certification Cards */}
-                        <div className="grid md:grid-cols-3 gap-8">
-                            {filteredCerts.map((cert, index) => (
-                                <motion.div
-                                    key={cert.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                                    className="group relative section-panel rounded-[28px] overflow-hidden transition-all hover:border-[#d9a66c]/70 h-full"
-                                >
-                                    {/* Gradient Background */}
-                                    <div className="absolute inset-0 bg-[#111111]" />
-
-                                    <div className="absolute top-4 right-4 w-12 h-12 bg-[#d9a66c] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                                        <Award className="w-6 h-6 text-[#121212]" />
-                                    </div>
-
-                                    {/* Content */}
-                                    <div className="p-8 relative z-10 flex flex-col h-full">
-                                        <h4 className="text-lg font-bold text-white mb-3 pr-8">
-                                            {cert.title}
-                                        </h4>
-
-                                        <p className="text-[#d9a66c] font-semibold mb-2">
-                                            {cert.issuer}
-                                        </p>
-
-                                        <p className="text-sm text-[#d4d4d4] mb-6">
-                                            Issued: {cert.date}
-                                        </p>
-
-                                        {/* Skills */}
-                                        <div className="flex flex-wrap gap-2">
-                                            {cert.skills.map((skill, idx) => (
-                                                <span
-                                                    key={idx}
-                                                    className="px-3 py-1 bg-[#d9a66c]/10 text-[#f5d6ad] text-xs rounded-full font-medium border border-[#d9a66c]/20"
-                                                >
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
 
                     {/* Organizations Section */}
                     <div>
