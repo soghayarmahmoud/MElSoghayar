@@ -28,7 +28,7 @@ const ModernProjects = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#d9a66c]">Projects</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-amber-400">Projects</p>
             <h2 className="text-4xl md:text-6xl font-black tracking-[-0.06em] mb-6 text-white leading-[0.96]">
               Selected work with depth.
             </h2>
@@ -42,8 +42,8 @@ const ModernProjects = () => {
                   key={filter.key}
                   onClick={() => setActiveFilter(filter.key)}
                   className={`px-8 py-3 rounded-full font-medium text-base transition-all duration-200 ${activeFilter === filter.key
-                    ? 'bg-[#d9a66c] text-[#121212] shadow-md'
-                    : 'bg-[#1a1a1a] text-[#f5f5f5] hover:bg-[#222222] border border-white/10'
+                    ? 'bg-amber-400 text-[#121212] shadow-[0_12px_30px_rgba(245,158,11,0.25)]'
+                    : 'bg-[#1a1a1a] text-[#f5f5f5] hover:bg-[#222222] border border-white/10 hover:border-amber-400/40'
                     }`}
                 >
                   <span>{filter.label}</span>

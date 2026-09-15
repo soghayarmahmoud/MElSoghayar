@@ -9,7 +9,7 @@ const ModernHero = () => {
   return (
     <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28">
       <div className="absolute inset-0 bg-[#0a0a0a]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(217,166,108,0.12),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.04),_transparent_26%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(245,158,11,0.12),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.04),_transparent_26%)]" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="mx-auto max-w-7xl">
@@ -37,7 +37,7 @@ const ModernHero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="mb-8 h-16 text-2xl font-semibold text-[#d9a66c] md:text-3xl lg:text-4xl"
+                className="mb-8 h-16 text-2xl font-semibold text-amber-400 md:text-3xl lg:text-4xl"
               >
                 <TypeAnimation
                   sequence={[
@@ -75,7 +75,7 @@ const ModernHero = () => {
               >
                 <a
                   href="#projects"
-                  className="flex items-center space-x-2 rounded-full bg-[#d9a66c] px-6 py-3 text-base font-semibold text-[#121212] shadow-[0_15px_40px_rgba(217,166,108,0.25)] transition-colors hover:bg-[#f5d6ad]"
+                  className="flex items-center space-x-2 rounded-full bg-amber-400 px-6 py-3 text-base font-semibold text-[#121212] shadow-[0_15px_40px_rgba(245,158,11,0.25)] transition-colors hover:bg-amber-300"
                 >
                   <span>View My Work</span>
                 </a>
@@ -83,7 +83,7 @@ const ModernHero = () => {
                 <a
                   href="/documents/Mahmoud_El-Soghayar_CV_EN.pdf"
                   download
-                  className="flex items-center space-x-2 rounded-full border border-white/10 bg-[#121212] px-6 py-3 text-base font-semibold text-[#f5f5f5] transition-colors hover:border-[#d9a66c] hover:text-[#f5d6ad]"
+                  className="flex items-center space-x-2 rounded-full border border-white/10 bg-[#121212] px-6 py-3 text-base font-semibold text-[#f5f5f5] transition-colors hover:border-amber-400 hover:text-amber-300"
                 >
                   <Download size={20} />
                   <span>Download CV</span>
@@ -98,7 +98,7 @@ const ModernHero = () => {
               className="order-1 flex items-center justify-center lg:order-2"
             >
               <div className="relative">
-                <div className="relative h-64 w-64 overflow-hidden rounded-full border border-white/10 bg-[#121212] shadow-[0_30px_70px_rgba(0,0,0,0.3)] md:h-80 md:w-80 lg:h-96 lg:w-96">
+                <div className="relative h-64 w-64 overflow-hidden rounded-full border border-white/10 bg-[#121212] shadow-[0_30px_70px_rgba(0,0,0,0.3)] transition-all duration-300 hover:ring-2 hover:ring-amber-400/50 hover:shadow-[0_30px_70px_rgba(245,158,11,0.15)] md:h-80 md:w-80 lg:h-96 lg:w-96">
                   <Image
                     src="/images/n.jpg"
                     alt="Mahmoud El Soghayar — Software & Embedded Systems Engineer"

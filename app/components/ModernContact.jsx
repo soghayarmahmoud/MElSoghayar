@@ -95,7 +95,7 @@ const ModernContact = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#d9a66c]">Get In Touch</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-amber-400">Get In Touch</p>
             <h2 className="mb-6 text-4xl font-black tracking-[-0.06em] text-white md:text-6xl">
               Let&apos;s build something real.
             </h2>
@@ -120,9 +120,9 @@ const ModernContact = () => {
                   <a
                     key={info.title}
                     href={info.href}
-                    className="flex items-center rounded-[24px] border border-white/10 bg-[#141414] p-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)] transition-transform hover:-translate-y-1"
+                    className="flex items-center rounded-[24px] border border-white/10 bg-[#141414] p-6 shadow-[0_18px_40px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 hover:border-amber-400/30"
                   >
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#d9a66c] text-[#121212]">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-amber-400 text-[#121212]">
                       {info.icon}
                     </div>
                     <div className="ml-4">
@@ -152,7 +152,7 @@ const ModernContact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-[#d9a66c] focus:outline-none"
+                      className="w-full rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-amber-400 focus:outline-none transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
@@ -168,7 +168,7 @@ const ModernContact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-[#d9a66c] focus:outline-none"
+                      className="w-full rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-amber-400 focus:outline-none transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -184,7 +184,7 @@ const ModernContact = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-[#d9a66c] focus:outline-none"
+                    className="w-full rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-amber-400 focus:outline-none transition-colors"
                     placeholder="Project inquiry"
                   />
                 </div>
@@ -199,7 +199,7 @@ const ModernContact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full resize-none rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-[#d9a66c] focus:outline-none"
+                    className="w-full resize-none rounded-2xl border border-white/10 bg-[#0e0e0e] px-4 py-3 text-[#f5f5f5] placeholder:text-[#a3a3a3] focus:border-amber-400 focus:outline-none transition-colors"
                     placeholder="Tell me about your project..."
                   />
                 </div>
@@ -207,7 +207,7 @@ const ModernContact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex w-full items-center justify-center space-x-2 rounded-full bg-[#d9a66c] px-6 py-4 text-lg font-semibold text-[#121212] shadow-[0_15px_40px_rgba(217,166,108,0.25)] transition-colors hover:bg-[#f5d6ad] disabled:cursor-not-allowed disabled:opacity-60"
+                  className="flex w-full items-center justify-center space-x-2 rounded-full bg-amber-400 px-6 py-4 text-lg font-semibold text-[#121212] shadow-[0_15px_40px_rgba(245,158,11,0.25)] transition-colors hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {isSubmitting ? (
                     <>
@@ -229,8 +229,8 @@ const ModernContact = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       className={`flex items-center space-x-2 rounded-2xl p-4 ${submitStatus === 'success'
-                        ? 'bg-[#d9a66c]/10 text-[#f5d6ad] border border-[#d9a66c]/20'
-                        : 'bg-[#d5655b]/10 text-[#f7b1aa] border border-[#d5655b]/20'
+                        ? 'bg-amber-500/10 text-amber-300 border border-amber-500/20'
+                        : 'bg-red-500/10 text-red-300 border border-red-500/20'
                         }`}
                     >
                       {submitStatus === 'success' ? (

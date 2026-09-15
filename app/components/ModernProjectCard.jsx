@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const ModernProjectCard = ({ project, index }) => {
   return (
-    <div className="group relative overflow-hidden border border-white/10 bg-[#0f0f0f]">
+    <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0f0f0f] hover:border-amber-400/40 transition-all duration-300">
       <div className="relative h-48 overflow-hidden">
         <Image
           src={project.image || '/images/b1.jpg'}
@@ -17,7 +17,7 @@ const ModernProjectCard = ({ project, index }) => {
 
         <div className="absolute right-4 top-4">
           {project.status === 'in-progress' ? (
-            <span className="rounded-full bg-[#d9a66c] px-3 py-1 text-xs font-medium text-[#121212]">
+            <span className="rounded-full bg-amber-400 px-3 py-1 text-xs font-medium text-[#121212]">
               In Progress
             </span>
           ) : project.status === 'pending' ? (
@@ -25,7 +25,7 @@ const ModernProjectCard = ({ project, index }) => {
               Pending
             </span>
           ) : (
-            <span className="rounded-full bg-[#f5d6ad] px-3 py-1 text-xs font-medium text-[#121212]">
+            <span className="rounded-full bg-amber-300 px-3 py-1 text-xs font-medium text-[#121212]">
               Live
             </span>
           )}
@@ -64,7 +64,7 @@ const ModernProjectCard = ({ project, index }) => {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 rounded-full bg-[#d9a66c] px-4 py-3 text-center font-medium text-[#121212] transition-colors hover:bg-[#f5d6ad]"
+              className="flex-1 rounded-full bg-amber-400 px-4 py-3 text-center font-medium text-[#121212] transition-colors hover:bg-amber-300 shadow-[0_8px_20px_rgba(245,158,11,0.2)]"
             >
               Live Demo
             </a>
@@ -75,7 +75,7 @@ const ModernProjectCard = ({ project, index }) => {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 rounded-full border border-white/10 bg-[#121212] px-4 py-3 text-center font-medium text-[#f5f5f5] transition-colors hover:border-[#d9a66c] hover:text-[#f5d6ad]"
+              className="flex-1 rounded-full border border-white/10 bg-[#121212] px-4 py-3 text-center font-medium text-[#f5f5f5] transition-colors hover:border-amber-400 hover:text-amber-300"
             >
               GitHub
             </a>

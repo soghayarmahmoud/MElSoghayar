@@ -15,7 +15,7 @@ const ModernAbout = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#d9a66c]">About Me</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-amber-400">About Me</p>
             <h2 className="text-4xl md:text-6xl font-black tracking-[-0.06em] mb-6 text-[#f5f5f5] leading-[0.96]">
               Software meets hardware.
             </h2>
@@ -69,7 +69,7 @@ const ModernAbout = () => {
                 key={stat.label}
                 className="section-panel p-8 rounded-[24px] text-center"
               >
-                <div className="text-4xl font-extrabold text-[#d9a66c] mb-3">
+                <div className="text-4xl font-extrabold text-amber-400 mb-3">
                   {stat.number}
                 </div>
                 <div className="text-sm font-semibold text-[#d4d4d4] uppercase tracking-[0.2em]">
