@@ -28,8 +28,16 @@ const certificates = [
     image: '/Certificates/mahmoud-elsoghayar-1f6ed99f-6ba7-485f-b5f6-09ecbe70398c-certificate.png',
     pdf: '/Certificates/mahmoud-elsoghayar-1f6ed99f-6ba7-485f-b5f6-09ecbe70398c-certificate.pdf',
   },
+  { id: 2,
+    title: 'Software Testing & Quality Assurance',
+    issuer: 'Digital Egypt Pioneers Initiative (DEPI)',
+    date: 'Juli 2026',
+    category: 'Software Engineering',
+    image: '/Certificates/Mahmoud Elsoghayar Mohammed Elsayed.png',
+    pdf: '/Certificates/Mahmoud Elsoghayar Mohammed Elsayed.pdf',
+  },
   {
-    id: 2,
+    id: 3,
     title: 'Agile & Clean Coding Practices',
     issuer: 'LinkedIn Learning',
     date: 'September 2026',
@@ -38,7 +46,7 @@ const certificates = [
     pdf: '/Certificates/CertificateOfCompletion_Agile Software Development Clean Coding Practices.pdf',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Web Development Challenger',
     issuer: 'Udacity & ITIDA',
     date: 'March 2022',
@@ -47,7 +55,7 @@ const certificates = [
     pdf: '/Certificates/شهادة-الوزاره-المصريه-.pdf',
   },
   {
-    id: 4,
+    id: 5,
     title: 'IoT Value Chain',
     issuer: 'ITI Platform',
     date: 'August 2026',
@@ -56,7 +64,7 @@ const certificates = [
     pdf: '/Certificates/Course_Certificate_En.pdf',
   },
   {
-    id: 5,
+    id: 6,
     title: 'IoT Foundations',
     issuer: 'LinkedIn Learning',
     date: 'September 2026',
@@ -65,7 +73,7 @@ const certificates = [
     pdf: '/Certificates/CertificateOfCompletion_IoT Foundations Fundamentals.pdf',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Learning Altium',
     issuer: 'LinkedIn Learning',
     date: 'September 2026',
@@ -74,7 +82,7 @@ const certificates = [
     pdf: '/Certificates/CertificateOfCompletion_Learning Altium.pdf',
   },
   {
-    id: 7,
+    id: 8,
     title: 'Project Leadership',
     issuer: 'LinkedIn Learning',
     date: 'September 2026',
@@ -83,7 +91,7 @@ const certificates = [
     pdf: '/Certificates/CertificateOfCompletion_Project Leadership.pdf',
   },
   {
-    id: 8,
+    id: 9,
     title: 'Progressive Web Apps (PWA)',
     issuer: 'Yanfaa',
     date: 'July 2024',
@@ -92,7 +100,7 @@ const certificates = [
     pdf: '/Certificates/PDA.pdf',
   },
   {
-    id: 9,
+    id: 10,
     title: 'HTML',
     issuer: 'Yanfaa',
     date: 'July 2024',
